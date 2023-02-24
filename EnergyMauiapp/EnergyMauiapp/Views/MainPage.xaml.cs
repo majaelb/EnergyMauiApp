@@ -7,6 +7,7 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
+         
 	}
 
     private async void OnYouTubeBtnClicked(object sender, EventArgs e)
@@ -17,7 +18,16 @@ public partial class MainPage : ContentPage
     private async void OnEstimationBtnClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new Views.SelfEstimationPage());
+    }
 
+    private async void OnBudgetBtnClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Views.DailyBudgetPage());
+    }
+
+    private async void OnFactLinkBtnClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Views.FactsAndLinksPage());
     }
 }
 

@@ -52,6 +52,10 @@
                       HeightRequest="300"
                       WidthRequest="400"
                       />
+            <Button
+            Text="Tillbaka"
+            Clicked="OnBackClicked"
+            HorizontalOptions="Center"/>
 
         </VerticalStackLayout>
     </ScrollView>

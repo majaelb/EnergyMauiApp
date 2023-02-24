@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnergyMauiapp.Views.MakeNewSelfEstimationPage"
+             Title="MakeNewSelfEstimationPage">
+        <VerticalStackLayout>
+        <Label
+            x:Name="InfoText"
+            HorizontalOptions="Center"/>
+        <Label
+            x:Name="Question"
+            HorizontalOptions="Center"/>
+        <Label
+            x:Name="AnswerOptions"
+            HorizontalOptions="Center"/>
+        <Entry
+            x:Name="Answer"
+            Placeholder="Skriv siffran som motsvarar rätt påstående här"
+            Completed="CountResult"
+            Keyboard="Numeric"
+            IsVisible="False"
+            HorizontalOptions="Center"/>
+        <Button
+            x:Name="NextBtn"
+            Text="Starta skattning"
+            HorizontalOptions="Center"
+            Clicked="OnNextBtnClicked"/>
+        <Button
+            x:Name="ResultBtn"
+            Text="Resultat"
+            HorizontalOptions="Center"
+            IsVisible="False"
+            Clicked="OnResultBtnClicked"/>
+        <Label
+                x:Name="Result"
+                HorizontalOptions="Center"/>
+            <Button
+            Text="Tillbaka"
+            Clicked="OnBackClicked"
+            HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+</ContentPage>

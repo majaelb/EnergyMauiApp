@@ -5,15 +5,26 @@
 
     <VerticalStackLayout>
         <Button
+        x:Name="EstimationBtn"
+        Text="Självskattning"
+        HorizontalOptions="Center"
+        Clicked="OnEstimationBtnClicked"/>
+        <Button
+        x:Name="BudgetBtn"
+        Text="Dagsbudget"
+        HorizontalOptions="Center"
+        Clicked="OnBudgetBtnClicked"/>
+        <Button
         x:Name="YouTubeBtn"
         Text="Meditationer"
         HorizontalOptions="Center"
         Clicked="OnYouTubeBtnClicked"/>
         <Button
-        x:Name="EstimationBtn"
-        Text="Självskattning"
+        x:Name="FactLinkBtn"
+        Text="Fakta och länkar"
         HorizontalOptions="Center"
-        Clicked="OnEstimationBtnClicked"/>
+        Clicked="OnFactLinkBtnClicked"/>
+        
     </VerticalStackLayout>
 
 </ContentPage>
