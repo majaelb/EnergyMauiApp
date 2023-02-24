@@ -16,7 +16,6 @@
         <Entry
             x:Name="Answer"
             Placeholder="Skriv siffran som motsvarar rätt påstående här"
-            Completed="CountResult"
             Keyboard="Numeric"
             IsVisible="False"
             HorizontalOptions="Center"/>

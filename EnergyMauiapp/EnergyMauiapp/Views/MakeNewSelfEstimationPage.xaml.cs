@@ -48,6 +48,7 @@ public partial class MakeNewSelfEstimationPage : ContentPage
         List<SelfEstTest> selfEstTest = SelfEstTest.MakeQuestionList();
         NextBtn.Text = "Nästa fråga";
         Answer.IsVisible = true;
+        //TODO: Försök nollställa texten i entryn mellan varje tryckning
         if (questionCount > selfEstTest.Count - 2)
         {
             NextBtn.IsVisible = false;
@@ -57,7 +58,10 @@ public partial class MakeNewSelfEstimationPage : ContentPage
         InfoText.Text = "Vi är intresserade av ditt nuvarande tillstånd, d.v.s. ungefär hur du har mått den senaste månaden.\r\nNär du ska jämföra med hur det var tidigare ska du göra det med hur det var innan du blev sjuk/skadades.\r\nI tabellen för varje fråga finns fyra påståenden som beskriver Inga (0), Lätta (1), Medelsvåra (2) och Svåra\r\nbesvär (3).\r\nVi vill att du markerar den siffra som står bredvid det påstående som bäst beskriver dina besvär.\r\nOm du tycker att du hamnar mellan två påståenden finns det även siffror som motsvarar detta.";
         Question.Text = selfEstTest[questionCount].Question;
         AnswerOptions.Text = selfEstTest[questionCount].AnswerOptions;
-
+        
+        User.EstResult += Convert.ToDouble(Answer.Text);
+        Result.Text = "Ditt resultat: " + User.EstResult.ToString();
+        
         questionCount++;
     }
 
