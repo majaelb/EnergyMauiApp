@@ -8,5 +8,9 @@ namespace EnergyMauiapp.Models
 {
     internal class SelfEstimation
     {
+        public string Question { get; set; }
+
+        public double Result { get; set; }
+
     }
 }

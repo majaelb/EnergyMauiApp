@@ -2,23 +2,22 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+	//int count = 0;
 
 	public MainPage()
 	{
 		InitializeComponent();
 	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
+    private async void OnYouTubeBtnClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Views.YouTubePage());
+    }
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
+    private async void OnEstimationBtnClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Views.SelfEstimationPage());
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+    }
 }
 
