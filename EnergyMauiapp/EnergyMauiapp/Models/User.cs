@@ -9,5 +9,7 @@ namespace EnergyMauiapp.Models
     internal static class User
     {
         public static double EstResult;
+        public static Dictionary<DateTime, double> DateAndResult = new();
+        public static List<SelfEstimation> SelfEstimations = new();
     }
 }

@@ -3,11 +3,63 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EnergyMauiapp.Views.PreviousSelfEstimationsPage"
              Title="PreviousSelfEstimationsPage">
-    <VerticalStackLayout>
+    <VerticalStackLayout
+        Spacing="15">
         <Label 
             Text="Tidigare resultat av självskattning!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Label
+            x:Name="None"
+            TextColor="MediumSpringGreen"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            />
+        <Label
+            x:Name="Low"
+            TextColor="CornflowerBlue"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            />
+        <Label
+            x:Name="Middle"
+            TextColor="Yellow"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            />
+        <Label
+            x:Name="High"
+            TextColor="PaleVioletRed"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            />
+
+        <ListView
+            ItemsSource="{Binding SelfEstimationResults}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid 
+                            Padding="10"
+                            RowDefinitions="Auto, *"
+                            RowSpacing="10"
+                            ColumnSpacing="20">
+                            <Label 
+                                Text="{Binding Key}"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+                            <Label 
+                                Grid.Row="1"                            
+                                Text="{Binding Value}"
+                                TextColor="RosyBrown"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
         <Button
             Text="Tillbaka"
             Clicked="OnBackClicked"

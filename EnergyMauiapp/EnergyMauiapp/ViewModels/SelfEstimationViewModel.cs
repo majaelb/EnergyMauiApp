@@ -11,12 +11,12 @@ namespace EnergyMauiapp.ViewModels
     {
         public List<SelfEstimation> SelfEstimationQuestions { get; set; }
 
-        public SelfEstimationViewModel()
-        {
-            var task = Task.Run(() => Helpers.FileManager.SplitFileToStringListAsync("skattning.txt"));
-            task.Wait();
-            SelfEstimationQuestions = task.Result;
-        }
+        //public SelfEstimationViewModel()
+        //{
+        //    var task = Task.Run(() => Helpers.FileManager.SplitFileToStringListAsync("skattning.txt"));
+        //    task.Wait();
+        //    SelfEstimationQuestions = task.Result;
+        //}
     
     }
 }
