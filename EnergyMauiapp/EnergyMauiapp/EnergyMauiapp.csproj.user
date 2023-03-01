@@ -21,6 +21,9 @@
     <MauiXaml Update="Views\MakeNewSelfEstimationPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\MyDayPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Views\PreviousSelfEstimationsPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

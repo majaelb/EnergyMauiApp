@@ -610,6 +610,9 @@
     <AppxPackagedFile Include="C:\Users\majal\.nuget\packages\communitytoolkit.maui.mediaelement\1.0.2\lib\net7.0-windows10.0.19041\CommunityToolkit.Maui.MediaElement.dll">
       <PackagePath>CommunityToolkit.Maui.MediaElement.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\majal\.nuget\packages\communitytoolkit.mvvm\8.1.0\lib\net6.0\CommunityToolkit.Mvvm.dll">
+      <PackagePath>CommunityToolkit.Mvvm.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\.nuget\packages\google.apis\1.60.0\lib\netstandard2.0\Google.Apis.dll">
       <PackagePath>Google.Apis.dll</PackagePath>
     </AppxPackagedFile>

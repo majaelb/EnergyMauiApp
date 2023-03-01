@@ -331,3 +331,4 @@ C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\
 C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Google.Apis.YouTube.v3.dll
 C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll
 C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\YoutubeExplode.dll
+C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Mvvm.dll

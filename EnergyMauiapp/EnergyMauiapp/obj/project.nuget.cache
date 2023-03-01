@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "A3EN6orlJJYujDQvFvVas+kXuFSEGpNkCP0yyybNPWWEfJFMaKdKyUtbFHq+VPzICNZzy7too1FCpDmXKmMNAg==",
+  "dgSpecHash": "tg/cbdDEJLUpSm81mTpnirTvpEWkIyMhCsxQvHzltNVGGTAktnj45rCGQYQCnQ75BMVlR+kxpRsNtu7vxN7nEA==",
   "success": true,
   "projectFilePath": "C:\\Users\\majal\\OneDrive\\Dokument\\System22\\Mauiapp\\MyEnergyMauiApp\\EnergyMauiapp\\EnergyMauiapp\\EnergyMauiapp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\majal\\.nuget\\packages\\anglesharp\\1.0.1\\anglesharp.1.0.1.nupkg.sha512",
     "C:\\Users\\majal\\.nuget\\packages\\communitytoolkit.maui.mediaelement\\1.0.2\\communitytoolkit.maui.mediaelement.1.0.2.nupkg.sha512",
+    "C:\\Users\\majal\\.nuget\\packages\\communitytoolkit.mvvm\\8.1.0\\communitytoolkit.mvvm.8.1.0.nupkg.sha512",
     "C:\\Users\\majal\\.nuget\\packages\\google.apis\\1.60.0\\google.apis.1.60.0.nupkg.sha512",
     "C:\\Users\\majal\\.nuget\\packages\\google.apis.auth\\1.60.0\\google.apis.auth.1.60.0.nupkg.sha512",
     "C:\\Users\\majal\\.nuget\\packages\\google.apis.core\\1.60.0\\google.apis.core.1.60.0.nupkg.sha512",

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnergyMauiapp.Views.MyDayPage"
+             Title="MyDayPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Här fyller du i vad du gjort under dagen!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Button
+            Text="Tillbaka"
+            Clicked="OnBackClicked"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+    </VerticalStackLayout>
+</ContentPage>

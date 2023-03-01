@@ -30,25 +30,25 @@
     <AppXManifest Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-02-28T19:31:51.386</Modified>
+      <Modified>2023-03-01T13:26:11.363</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-02-28T19:31:50.398</Modified>
+      <Modified>2023-03-01T13:14:03.522</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\EnergyMauiapp.runtimeconfig.json">
       <PackagePath>EnergyMauiapp.runtimeconfig.json</PackagePath>
-      <Modified>2023-02-24T10:22:31.041</Modified>
+      <Modified>2023-03-01T09:30:38.827</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\EnergyMauiapp.dll">
       <PackagePath>EnergyMauiapp.dll</PackagePath>
-      <Modified>2023-02-28T19:31:49.026</Modified>
+      <Modified>2023-03-01T13:26:09.951</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>EnergyMauiapp.exe</PackagePath>
-      <Modified>2023-02-28T19:31:49.059</Modified>
+      <Modified>2023-03-01T13:26:09.963</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.3\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -814,6 +814,10 @@
       <PackagePath>CommunityToolkit.Maui.MediaElement.dll</PackagePath>
       <Modified>2023-02-20T12:05:34.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\majal\.nuget\packages\communitytoolkit.mvvm\8.1.0\lib\net6.0\CommunityToolkit.Mvvm.dll">
+      <PackagePath>CommunityToolkit.Mvvm.dll</PackagePath>
+      <Modified>2023-01-17T22:56:14.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\.nuget\packages\google.apis\1.60.0\lib\netstandard2.0\Google.Apis.dll">
       <PackagePath>Google.Apis.dll</PackagePath>
       <Modified>2023-02-20T11:30:48.000</Modified>
@@ -956,7 +960,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\EnergyMauiapp.deps.json">
       <PackagePath>EnergyMauiapp.deps.json</PackagePath>
-      <Modified>2023-02-28T19:31:51.200</Modified>
+      <Modified>2023-03-01T13:26:11.185</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\7.0.59\ref\net7.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>

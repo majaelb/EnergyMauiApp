@@ -12,5 +12,6 @@ namespace EnergyMauiapp.Models
 
         public double Result { get; set; }
 
+        public string Text { get; set; }
     }
 }

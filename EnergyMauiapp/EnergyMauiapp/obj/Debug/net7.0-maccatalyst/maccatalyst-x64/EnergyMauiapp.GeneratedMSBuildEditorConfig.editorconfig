@@ -70,6 +70,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Views.MakeNe
 build_metadata.AdditionalFiles.TargetPath = Views\MakeNewSelfEstimationPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\MakeNewSelfEstimationPage.xaml
 
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Views/MyDayPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Views.MyDayPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MyDayPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MyDayPage.xaml
+
 [C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Views/PreviousSelfEstimationsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Views.PreviousSelfEstimationsPage.xaml

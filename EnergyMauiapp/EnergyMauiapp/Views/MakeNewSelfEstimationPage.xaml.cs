@@ -53,6 +53,7 @@ public partial class MakeNewSelfEstimationPage : ContentPage
             File.WriteAllText(fileName, jsonString);
         }
 
+
         //SelfEstimation selfEstimation = new()
         //{
         //    Date = DateTime.Now,
