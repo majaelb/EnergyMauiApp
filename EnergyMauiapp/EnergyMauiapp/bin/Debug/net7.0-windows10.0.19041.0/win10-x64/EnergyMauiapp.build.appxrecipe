@@ -892,6 +892,12 @@
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\backgroundfields.scale-100.jpg">
+      <PackagePath>backgroundfields.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\clouds.scale-100.jpg">
+      <PackagePath>clouds.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
     </AppxPackagedFile>
@@ -906,6 +912,21 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\flowersheader.scale-100.jpg">
+      <PackagePath>flowersheader.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\grass.scale-100.jpg">
+      <PackagePath>grass.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\headersolros.scale-100.jpg">
+      <PackagePath>headersolros.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\ombre.scale-100.jpg">
+      <PackagePath>ombre.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\wheat.scale-100.jpg">
+      <PackagePath>wheat.scale-100.jpg</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

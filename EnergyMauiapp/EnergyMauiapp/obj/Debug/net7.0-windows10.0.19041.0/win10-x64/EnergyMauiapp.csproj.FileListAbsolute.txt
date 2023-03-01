@@ -332,3 +332,10 @@ C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\
 C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll
 C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\YoutubeExplode.dll
 C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Mvvm.dll
+C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\backgroundfields.scale-100.jpg
+C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\wheat.scale-100.jpg
+C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\ombre.scale-100.jpg
+C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\grass.scale-100.jpg
+C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\headersolros.scale-100.jpg
+C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\clouds.scale-100.jpg
+C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\flowersheader.scale-100.jpg

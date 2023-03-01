@@ -49,6 +49,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\backgroundfields.jpg" />
+	  <None Remove="Resources\Images\clouds.jpg" />
+	  <None Remove="Resources\Images\flowersheader.jpg" />
+	  <None Remove="Resources\Images\grass.jpg" />
+	  <None Remove="Resources\Images\headersolros.jpg" />
+	  <None Remove="Resources\Images\ombre.jpg" />
+	  <None Remove="Resources\Images\wheat.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui.MediaElement" Version="1.0.2" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
 		<PackageReference Include="Google.Apis.YouTube.v3" Version="1.60.0.2945" />

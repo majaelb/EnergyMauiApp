@@ -10,13 +10,15 @@ namespace EnergyMauiapp.ViewModels
     internal class SelfEstimationViewModel
     {
         public List<SelfEstimation> SelfEstimationQuestions { get; set; }
+        public Header Header { get; set; }
+        public SelfEstimationViewModel()
+        {
+            Header = new Header()
+            {
+                Title = "Självskattning",
+                HeaderImageSource = "flowersheader.jpg"
+            };
+        }
 
-        //public SelfEstimationViewModel()
-        //{
-        //    var task = Task.Run(() => Helpers.FileManager.SplitFileToStringListAsync("skattning.txt"));
-        //    task.Wait();
-        //    SelfEstimationQuestions = task.Result;
-        //}
-    
     }
 }

@@ -35,5 +35,15 @@ namespace EnergyMauiapp.Helpers
             return tips;
         }
 
+
+        public static List<string> MakeLinkList()
+        {
+            List<string> links = new()
+            {
+            "https://brainfatigue.se/behandling-mindfulness/",
+            "https://www.gu.se/forskning/mental-trotthet-hjarntrotthet"
+            };
+            return links;
+        }
     }
 }

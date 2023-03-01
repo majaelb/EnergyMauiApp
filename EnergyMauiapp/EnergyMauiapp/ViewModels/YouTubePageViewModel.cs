@@ -1,27 +1,25 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using EnergyMauiapp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EnergyMauiapp.Models;
 
 namespace EnergyMauiapp.ViewModels
 {
-    internal partial class MainPageViewModel : ObservableObject
+    internal partial class YouTubePageViewModel : ObservableObject
     {
         [ObservableProperty]
         string tips;
 
         public Header Header { get; set; }
-
-        public MainPageViewModel()
+        public YouTubePageViewModel()
         {
             Tips = Helpers.ListManager.AddOneRandomTips();
             Header = new Header()
             {
-                Title = "Energiappen",
+                Title = "Meditationer",
                 HeaderImageSource = "flowersheader.jpg"
             };
         }

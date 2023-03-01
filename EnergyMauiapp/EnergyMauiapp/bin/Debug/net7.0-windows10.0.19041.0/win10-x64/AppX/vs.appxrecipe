@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-03-01T13:26:11.363</Modified>
+      <Modified>2023-03-01T16:37:30.205</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-03-01T13:14:03.522</Modified>
+      <Modified>2023-03-01T16:37:29.610</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\EnergyMauiapp.runtimeconfig.json">
       <PackagePath>EnergyMauiapp.runtimeconfig.json</PackagePath>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\EnergyMauiapp.dll">
       <PackagePath>EnergyMauiapp.dll</PackagePath>
-      <Modified>2023-03-01T13:26:09.951</Modified>
+      <Modified>2023-03-01T16:37:28.394</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>EnergyMauiapp.exe</PackagePath>
-      <Modified>2023-03-01T13:26:09.963</Modified>
+      <Modified>2023-03-01T16:37:28.406</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.3\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -960,7 +960,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\EnergyMauiapp.deps.json">
       <PackagePath>EnergyMauiapp.deps.json</PackagePath>
-      <Modified>2023-03-01T13:26:11.185</Modified>
+      <Modified>2023-03-01T16:37:30.038</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\7.0.59\ref\net7.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -1008,207 +1008,235 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2023-02-24T08:25:06.134</Modified>
+      <Modified>2023-03-01T16:13:56.404</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.481</Modified>
+      <Modified>2023-03-01T16:13:56.752</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.501</Modified>
+      <Modified>2023-03-01T16:13:56.767</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.520</Modified>
+      <Modified>2023-03-01T16:13:56.779</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.543</Modified>
+      <Modified>2023-03-01T16:13:56.814</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.634</Modified>
+      <Modified>2023-03-01T16:13:56.917</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.243</Modified>
+      <Modified>2023-03-01T16:13:56.494</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.249</Modified>
+      <Modified>2023-03-01T16:13:56.498</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.266</Modified>
+      <Modified>2023-03-01T16:13:56.515</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.254</Modified>
+      <Modified>2023-03-01T16:13:56.502</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.258</Modified>
+      <Modified>2023-03-01T16:13:56.506</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.211</Modified>
+      <Modified>2023-03-01T16:13:56.468</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.220</Modified>
+      <Modified>2023-03-01T16:13:56.471</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.240</Modified>
+      <Modified>2023-03-01T16:13:56.491</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.224</Modified>
+      <Modified>2023-03-01T16:13:56.476</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.229</Modified>
+      <Modified>2023-03-01T16:13:56.480</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.147</Modified>
+      <Modified>2023-03-01T16:13:56.416</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.152</Modified>
+      <Modified>2023-03-01T16:13:56.420</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.158</Modified>
+      <Modified>2023-03-01T16:13:56.427</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.162</Modified>
+      <Modified>2023-03-01T16:13:56.432</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.171</Modified>
+      <Modified>2023-03-01T16:13:56.437</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.176</Modified>
+      <Modified>2023-03-01T16:13:56.441</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.181</Modified>
+      <Modified>2023-03-01T16:13:56.445</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.206</Modified>
+      <Modified>2023-03-01T16:13:56.463</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.186</Modified>
+      <Modified>2023-03-01T16:13:56.448</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.193</Modified>
+      <Modified>2023-03-01T16:13:56.452</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.337</Modified>
+      <Modified>2023-03-01T16:13:56.580</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.344</Modified>
+      <Modified>2023-03-01T16:13:56.588</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.353</Modified>
+      <Modified>2023-03-01T16:13:56.595</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.366</Modified>
+      <Modified>2023-03-01T16:13:56.605</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.389</Modified>
+      <Modified>2023-03-01T16:13:56.625</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.301</Modified>
+      <Modified>2023-03-01T16:13:56.544</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.308</Modified>
+      <Modified>2023-03-01T16:13:56.552</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.314</Modified>
+      <Modified>2023-03-01T16:13:56.557</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.319</Modified>
+      <Modified>2023-03-01T16:13:56.563</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.331</Modified>
+      <Modified>2023-03-01T16:13:56.574</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.271</Modified>
+      <Modified>2023-03-01T16:13:56.520</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.274</Modified>
+      <Modified>2023-03-01T16:13:56.524</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.281</Modified>
+      <Modified>2023-03-01T16:13:56.527</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.286</Modified>
+      <Modified>2023-03-01T16:13:56.532</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.296</Modified>
+      <Modified>2023-03-01T16:13:56.540</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.396</Modified>
+      <Modified>2023-03-01T16:13:56.635</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.408</Modified>
+      <Modified>2023-03-01T16:13:56.646</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.419</Modified>
+      <Modified>2023-03-01T16:13:56.657</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.432</Modified>
+      <Modified>2023-03-01T16:13:56.674</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.469</Modified>
+      <Modified>2023-03-01T16:13:56.732</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\backgroundfields.scale-100.jpg">
+      <PackagePath>backgroundfields.scale-100.jpg</PackagePath>
+      <Modified>2023-03-01T14:15:29.822</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\clouds.scale-100.jpg">
+      <PackagePath>clouds.scale-100.jpg</PackagePath>
+      <Modified>2023-03-01T16:11:36.171</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.193</Modified>
+      <Modified>2023-03-01T16:13:56.390</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.208</Modified>
+      <Modified>2023-03-01T16:13:56.407</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.227</Modified>
+      <Modified>2023-03-01T16:13:56.422</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.250</Modified>
+      <Modified>2023-03-01T16:13:56.447</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2023-02-24T08:25:06.313</Modified>
+      <Modified>2023-03-01T16:13:56.504</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\flowersheader.scale-100.jpg">
+      <PackagePath>flowersheader.scale-100.jpg</PackagePath>
+      <Modified>2023-03-01T16:13:41.691</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\grass.scale-100.jpg">
+      <PackagePath>grass.scale-100.jpg</PackagePath>
+      <Modified>2023-02-20T13:14:41.581</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\headersolros.scale-100.jpg">
+      <PackagePath>headersolros.scale-100.jpg</PackagePath>
+      <Modified>2023-03-01T16:07:24.436</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\ombre.scale-100.jpg">
+      <PackagePath>ombre.scale-100.jpg</PackagePath>
+      <Modified>2023-03-01T14:24:06.166</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\resizetizer\r\wheat.scale-100.jpg">
+      <PackagePath>wheat.scale-100.jpg</PackagePath>
+      <Modified>2023-03-01T14:21:15.387</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

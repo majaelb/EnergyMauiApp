@@ -10,9 +10,12 @@ namespace EnergyMauiapp.Views;
 
 public partial class YouTubePage : ContentPage
 {
+    YouTubePageViewModel vm = new();
+
     public YouTubePage()
     {
         InitializeComponent();
+        BindingContext = vm;
     }
     private async void GetVideoContent(object sender, EventArgs e)
     {
