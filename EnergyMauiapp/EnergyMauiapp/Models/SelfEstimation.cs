@@ -8,6 +8,7 @@ namespace EnergyMauiapp.Models
 {
     internal class SelfEstimation
     {
+        //TODO: Använda denna klass och de/serialisera lista ist för Dictionary i resultat?
         public DateTime Date { get; set; }
 
         public double Result { get; set; }

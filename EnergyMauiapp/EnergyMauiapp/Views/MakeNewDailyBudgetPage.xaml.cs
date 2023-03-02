@@ -1,4 +1,5 @@
 using EnergyMauiapp.ViewModels;
+using EnergyMauiapp.Models;
 
 namespace EnergyMauiapp.Views;
 

@@ -2,9 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EnergyMauiapp.Views.MakeNewDailyBudgetPage"
+             xmlns:viewmodel ="clr-namespace:EnergyMauiapp.ViewModels"
+             x:DataType="viewmodel:MakeNewDailyBudgetPageViewModel"
                 Title="{Binding Header.Title}"
              BackgroundColor="Lightgray">
-
+    <ScrollView>
     <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
@@ -43,6 +45,60 @@
             TextColor="DimGray"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+
+
+        <ListView
+            ItemsSource="{Binding BudgetList}"
+                >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid 
+                            Padding="10"
+                            RowDefinitions="Auto, *"
+                            ColumnDefinitions="200, 200, 100"
+                            ColumnSpacing="20">
+                            <Label Grid.Column="1"
+                                   Text="{Binding Name}"
+                                   FontSize="32"/>
+                            
+                            <Button 
+                                    Grid.Column="2"
+                                    Text="Lägg till"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MakeNewDailyBudgetPageViewModel}}, Path=AddCommand}"
+                                     CommandParameter="{Binding .}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+
+        <ListView
+            ItemsSource="{Binding MyBudgetList}"
+                >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid 
+                            Padding="10"
+                            RowDefinitions="Auto, *"
+                            ColumnDefinitions="200, 200, 100"
+                            ColumnSpacing="20">
+                            <Label Grid.Column="1"
+                                   Text="{Binding Name}"
+                                   FontSize="32"/>
+                            
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+
         <Button
             Text="Tillbaka"
                 TextColor="DimGray"
@@ -50,4 +106,5 @@
             Clicked="OnBackClicked"
             HorizontalOptions="Center"/>
     </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
