@@ -40,7 +40,7 @@
         </Frame>
 
         <Label 
-            Text="Här gör du en ny dagsbudget"
+            Text="Här gör du en ny dagsbudget, lägg till de saker som du orkar göra på en dag utan att vara helt slut på kvällen"
             FontSize="20"
             TextColor="DimGray"
             VerticalOptions="Center" 
@@ -56,16 +56,19 @@
                     <ViewCell>
                         <Grid 
                             Padding="10"
-                            RowDefinitions="Auto, *"
-                            ColumnDefinitions="200, 200, 100"
+                            ColumnDefinitions=".25*, .25*, .25*, .25*"
                             ColumnSpacing="20">
                             <Label Grid.Column="1"
                                    Text="{Binding Name}"
-                                   FontSize="32"/>
+                                   HorizontalOptions="End"
+                                   FontSize="14"/>
                             
                             <Button 
                                     Grid.Column="2"
                                     Text="Lägg till"
+                                    TextColor="DimGray"
+                                    Opacity="0.7"
+                                    HorizontalOptions="Start"
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MakeNewDailyBudgetPageViewModel}}, Path=AddCommand}"
                                      CommandParameter="{Binding .}"/>
                         </Grid>
@@ -74,9 +77,14 @@
             </ListView.ItemTemplate>
         </ListView>
 
+            <Label 
+            Text="Här är de aktiviteter du valt. Tryck på ta bort om du ångrar något val. Tryck på spara när du är klar."
+            FontSize="20"
+            TextColor="DimGray"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
 
-
-        <ListView
+            <ListView
             ItemsSource="{Binding MyBudgetList}"
                 >
             <ListView.ItemTemplate>
@@ -84,27 +92,45 @@
                     <ViewCell>
                         <Grid 
                             Padding="10"
-                            RowDefinitions="Auto, *"
-                            ColumnDefinitions="200, 200, 100"
+                            ColumnDefinitions=".25*, .25*, .25*, .25*"
                             ColumnSpacing="20">
                             <Label Grid.Column="1"
                                    Text="{Binding Name}"
-                                   FontSize="32"/>
-                            
-                        </Grid>
+                                   HorizontalOptions="End"
+                                   FontSize="14"/>
+                                <Button 
+                                    Grid.Column="2"
+                                    Text="Ta bort"
+                                    TextColor="DimGray"
+                                    Opacity="0.7"
+                                    HorizontalOptions="Start"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MakeNewDailyBudgetPageViewModel}}, Path=DeleteCommand}"
+                                     CommandParameter="{Binding .}"/>
+                            </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
-
-
-        <Button
+            <Grid
+                ColumnDefinitions=".25*, .25*, .25*, .25*"
+                            ColumnSpacing="20">
+            <Button
+            Text="Spara"
+                Grid.Column="1"
+                TextColor="DimGray"
+                    Opacity="0.7"
+            Command="{Binding SaveCommand}"
+            HorizontalOptions="End"/>
+        
+            <Button
             Text="Tillbaka"
+                Grid.Column="2"
                 TextColor="DimGray"
                     Opacity="0.7"
             Clicked="OnBackClicked"
-            HorizontalOptions="Center"/>
-    </VerticalStackLayout>
+            HorizontalOptions="Start"/>
+            </Grid>
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

@@ -14,6 +14,7 @@ public partial class MakeNewDailyBudgetPage : ContentPage
 
     private async void OnBackClicked(object sender, EventArgs e)
     {
+        User.MyBudget = 0;
         await Navigation.PopAsync();
     }
 }
