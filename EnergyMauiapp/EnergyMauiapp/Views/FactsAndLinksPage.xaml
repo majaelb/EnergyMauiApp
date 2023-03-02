@@ -37,7 +37,7 @@
 
         <Label 
             Text="Här hittar du nyttiga fakta och länkar om hjärntrötthet!"
-            FontSize="Title"
+            FontSize="20"
             TextColor="DimGray"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />

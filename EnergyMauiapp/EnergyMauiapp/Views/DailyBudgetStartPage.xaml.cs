@@ -1,11 +1,19 @@
+using EnergyMauiapp.ViewModels;
+
 namespace EnergyMauiapp.Views;
 
 public partial class DailyBudgetPage : ContentPage
 {
+
+    DailyBudgetStartPageViewModel vm = new();
+    
     public DailyBudgetPage()
     {
         InitializeComponent();
+        BindingContext = vm;
     }
+
+
 
     private async void OnNewBudgetBtnClicked(object sender, EventArgs e)
     {

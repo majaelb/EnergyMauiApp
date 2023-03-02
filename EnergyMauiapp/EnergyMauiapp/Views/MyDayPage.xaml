@@ -2,16 +2,52 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EnergyMauiapp.Views.MyDayPage"
-             Title="MyDayPage">
-    <VerticalStackLayout>
+             Title="{Binding Header.Title}"
+             BackgroundColor="Lightgray">
+
+    <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            HorizontalOptions="Center">
+
+        <Image
+                Source="{Binding Header.HeaderImageSource}"
+            Opacity="0.7"
+            
+                HeightRequest="250"/>
+        <Frame BorderColor="Gray"
+               BackgroundColor="White"
+                    Opacity="0.5"
+       CornerRadius="5"
+       Padding="8"
+               HorizontalOptions="CenterAndExpand"
+               HeightRequest="100">
+            <StackLayout>
+                <Label Text="Tips och råd"
+                           HorizontalOptions="Center"
+                       TextColor="DimGray"
+           FontSize="14"
+           FontAttributes="Bold" />
+                <BoxView Color="Gray"
+             HeightRequest="2"
+             HorizontalOptions="Fill" />
+                <Label Text="{Binding Tips}"
+                           HorizontalOptions="Center"
+                       TextColor="DimGray"/>
+            </StackLayout>
+        </Frame>
+
         <Label 
-            Text="Här fyller du i vad du gjort under dagen!"
+            Text="Här fyller du i vad du gjort under dagen"
+            FontSize="20"
+            TextColor="DimGray"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Button
             Text="Tillbaka"
+                TextColor="DimGray"
+                    Opacity="0.7"
             Clicked="OnBackClicked"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"/>
+            HorizontalOptions="Center"/>
     </VerticalStackLayout>
 </ContentPage>

@@ -6,11 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
 using static System.Net.Mime.MediaTypeNames;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace EnergyMauiapp.ViewModels
 {
-    internal class PreviousSelfEstimationPageViewModel
+    internal partial class PreviousSelfEstimationPageViewModel : ObservableObject
     {
+        [ObservableProperty]
+        string tips;
+
+        public Header Header { get; set; }
         public Dictionary<DateTime, double> SelfEstimationResults { get; set; }
         //public List<SelfEstimation> SelfEstimations { get; set; }
 
@@ -19,11 +24,13 @@ namespace EnergyMauiapp.ViewModels
             string json = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Skattningsresultaten.txt"));
             SelfEstimationResults = JsonSerializer.Deserialize<Dictionary<DateTime, double>>(json);
             //SelfEstimations = JsonSerializer.Deserialize<List<SelfEstimation>>(json);
-            //foreach(var item in SelfEstimationResults)
-            //{
-            //    if(item.Value <= 10)
-                    
-            //}
+            //TODO: Ändra till klass med lista att serialisera?
+            Tips = Helpers.ListManager.AddOneRandomTips();
+            Header = new Header()
+            {
+                Title = "Resultat självskattningar",
+                HeaderImageSource = "flowersheader.jpg"
+            };
         }
     }
 }

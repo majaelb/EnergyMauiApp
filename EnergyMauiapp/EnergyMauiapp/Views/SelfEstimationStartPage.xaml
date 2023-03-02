@@ -4,8 +4,11 @@
              x:Class="EnergyMauiapp.Views.SelfEstimationPage"
              Title="{Binding Header.Title}"
              BackgroundColor="LightGray">
-    <VerticalStackLayout>
-        <Image
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            >
+            <Image
                 Source="{Binding Header.HeaderImageSource}"
             Opacity="0.7"
             
@@ -32,18 +35,37 @@
             </StackLayout>
         </Frame>
 
-        <Button
-        x:Name="NewSelfEstBtn"
-        Text="Ny självskattning"
-        HorizontalOptions="Center"
-        Clicked="OnNewSelfEstBtnClicked"/>
-        <Button
-        x:Name="PreviousSelfEstBtn"
-        Text="Tidigare resultat"
-        HorizontalOptions="Center"
-        Clicked="OnPrevSelfEstBtnClicked"/>
+        <Label 
+            Text="Välj om du vill göra en ny skattning eller se tidigare resultat"
+            FontSize="20"
+            TextColor="DimGray"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Grid 
+                ColumnDefinitions=".25*, .25*, .25*, .25*"
+                Padding="10"
+                ColumnSpacing="10">
+            <Button 
+                x:Name="NewSelfEstBtn"
+                    Text="Ny självskattning"
+                    TextColor="DimGray"
+                    Opacity="0.7"
+                Grid.Column="1"
+                Clicked="OnNewSelfEstBtnClicked"/>
+            <Button 
+                    x:Name="PreviousSelfEstBtn"
+                    Text="Tidigare resultat"
+                    TextColor="DimGray"
+                    Opacity="0.7"
+                Grid.Column="2"
+                Clicked="OnPrevSelfEstBtnClicked"/>
+        </Grid>
+
         <Button
             Text="Tillbaka"
+                TextColor="DimGray"
+                    Opacity="0.7"
             Clicked="OnBackClicked"
             HorizontalOptions="Center"/>
     </VerticalStackLayout>

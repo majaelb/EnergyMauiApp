@@ -1,4 +1,5 @@
 using EnergyMauiapp.Models;
+using EnergyMauiapp.ViewModels;
 using System.Text.Json;
 
 namespace EnergyMauiapp.Views;
@@ -6,10 +7,12 @@ namespace EnergyMauiapp.Views;
 public partial class MakeNewSelfEstimationPage : ContentPage
 {
     int questionCount = 0;
+    MakeNewSelfEstimationPageViewModel vm = new();
    
     public MakeNewSelfEstimationPage()
     {
         InitializeComponent();
+        BindingContext = vm;
     }
     private void OnNextBtnClicked(object sender, EventArgs e)
     {

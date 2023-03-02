@@ -1,11 +1,15 @@
+using EnergyMauiapp.ViewModels;
+
 namespace EnergyMauiapp.Views;
 
 public partial class SelfEstimationPage : ContentPage
 {
+    SelfEstimationViewModel vm = new();
 
     public SelfEstimationPage()
     {
         InitializeComponent();
+        BindingContext = vm;
     }
 
     private async void OnNewSelfEstBtnClicked(object sender, EventArgs e)

@@ -8,20 +8,22 @@ using System.Threading.Tasks;
 
 namespace EnergyMauiapp.ViewModels
 {
-    internal partial class SelfEstimationViewModel : ObservableObject
+    internal partial class MyDayPageViewModel : ObservableObject
     {
+
         [ObservableProperty]
         string tips;
+
         public Header Header { get; set; }
-        public SelfEstimationViewModel()
+
+        public MyDayPageViewModel()
         {
             Tips = Helpers.ListManager.AddOneRandomTips();
             Header = new Header()
             {
-                Title = "Självskattning",
+                Title = "Min dag",
                 HeaderImageSource = "flowersheader.jpg"
             };
         }
-
     }
 }
