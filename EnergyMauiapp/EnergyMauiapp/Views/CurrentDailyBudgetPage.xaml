@@ -4,7 +4,7 @@
              x:Class="EnergyMauiapp.Views.CurrentDailyBudgetPage"
                Title="{Binding Header.Title}"
              BackgroundColor="Lightgray">
-
+    <ScrollView>
     <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
@@ -43,6 +43,33 @@
             TextColor="DimGray"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+        <Label
+            Text="{Binding TotalBudget, StringFormat='Din dagsbudget är: {0}'}"
+            FontSize="20"
+            TextColor="DimGray"
+            HorizontalOptions="Center"/>
+
+        <ListView
+            ItemsSource="{Binding MyChosenActivities}"
+                >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid 
+                            Padding="10"
+                            ColumnDefinitions=".25*, .25*, .25*, .25*"
+                            ColumnSpacing="20">
+                            <Label Grid.Column="1"
+                                   Text="{Binding Name}"
+                                   HorizontalOptions="End"
+                                   FontSize="14"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
         <Button
             Text="Tillbaka"
                 TextColor="DimGray"
@@ -50,4 +77,5 @@
             Clicked="OnBackClicked"
             HorizontalOptions="Center"/>
     </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

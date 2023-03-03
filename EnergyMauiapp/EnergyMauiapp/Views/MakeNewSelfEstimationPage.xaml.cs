@@ -6,6 +6,8 @@ namespace EnergyMauiapp.Views;
 
 public partial class MakeNewSelfEstimationPage : ContentPage
 {
+    //TODO: Flytta över kod till ViewModel?
+
     int questionCount = 0;
     MakeNewSelfEstimationPageViewModel vm = new();
    
@@ -39,12 +41,12 @@ public partial class MakeNewSelfEstimationPage : ContentPage
     {
         User.EstResult += Convert.ToDouble(Answer.Text); //Räknar in även sista poängen när man trycker sig vidare
 
-        User.DateAndResult.Add(DateTime.Now, User.EstResult); //Ska denna ligga i if-satsen?
+        User.DateAndEstimationResult.Add(DateTime.Now, User.EstResult); //Ska denna ligga i if-satsen?
 
         string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Skattningsresultaten.txt");//address
         if (!File.Exists(fileName))
         {
-            string jsonString = JsonSerializer.Serialize(User.DateAndResult);
+            string jsonString = JsonSerializer.Serialize(User.DateAndEstimationResult);
             File.WriteAllText(fileName, jsonString);
         }
         else

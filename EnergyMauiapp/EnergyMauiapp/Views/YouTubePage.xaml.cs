@@ -10,6 +10,7 @@ namespace EnergyMauiapp.Views;
 
 public partial class YouTubePage : ContentPage
 {
+    //TODO: Refaktorera koden
     YouTubePageViewModel vm = new();
 
     public YouTubePage()

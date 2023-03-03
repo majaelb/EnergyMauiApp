@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
+using System.Text.Json;
 
 namespace EnergyMauiapp.ViewModels
 {
@@ -67,7 +68,7 @@ namespace EnergyMauiapp.ViewModels
         {
             var budget = (Budget)b;
             MyBudgetList.Add(budget);
-            User.MyBudget += budget.Points;    
+            User.MyBudget += budget.Points;
         }
 
         [RelayCommand]
@@ -81,12 +82,18 @@ namespace EnergyMauiapp.ViewModels
         [RelayCommand]
         public void Save()
         {
-            //TODO: Spara som Json i txt-fil med en parameter för resultatet(nuvarande budget) och en parameter(lista budget.Name) för alla valda
-            //aktiviteter för att komma åt den aktuella dagsbudgeten även nästa gång?
-            //Nästa gång en ny budget görs så skrivs denna över så att bara den senaste finns tillgänglig?  
+            var myDailyBudget = new DailyBudget()
+            {
+                TotalDailyBudget = User.MyBudget,
+                ChosenActivities = MyBudgetList
+            };
+
+            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DailyBudget.txt");//address
+            string jsonString = JsonSerializer.Serialize(myDailyBudget);
+            File.WriteAllText(fileName, jsonString);
+
+            //await DisplayAlert("Alert", "You have been alerted", "OK");
+            //TODO: Lägg till displayalert som säger "din budget är sparad" Funkar ej i viewmodel?
         }
-
-
-
     }
 }

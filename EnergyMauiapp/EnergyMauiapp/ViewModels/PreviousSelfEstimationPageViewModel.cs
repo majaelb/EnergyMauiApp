@@ -26,6 +26,7 @@ namespace EnergyMauiapp.ViewModels
             //SelfEstimations = JsonSerializer.Deserialize<List<SelfEstimation>>(json);
             //TODO: Ändra till klass med lista att serialisera?
             Tips = Helpers.ListManager.AddOneRandomTips();
+
             Header = new Header()
             {
                 Title = "Resultat självskattningar",

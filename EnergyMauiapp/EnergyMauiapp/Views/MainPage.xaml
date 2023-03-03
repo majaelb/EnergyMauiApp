@@ -4,7 +4,7 @@
              x:Class="EnergyMauiapp.MainPage"
              BackgroundColor="Lightgray"
              Title="{Binding Header.Title}">
-
+    <ScrollView>
     <VerticalStackLayout
             Spacing="20"
             Padding="20,0"
@@ -74,5 +74,5 @@
         Clicked="OnFactLinkBtnClicked"/>
         
     </VerticalStackLayout>
-
+    </ScrollView>
 </ContentPage>
