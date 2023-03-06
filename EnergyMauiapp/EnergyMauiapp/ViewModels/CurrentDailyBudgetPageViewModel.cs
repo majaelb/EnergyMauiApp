@@ -17,6 +17,9 @@ namespace EnergyMauiapp.ViewModels
         string tips;
 
         [ObservableProperty]
+        string name;
+
+        [ObservableProperty]
         int totalBudget;
 
         [ObservableProperty]
@@ -26,7 +29,7 @@ namespace EnergyMauiapp.ViewModels
         public Header Header { get; set; }
         public CurrentDailyBudgetPageViewModel()
         {
-            string json = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DailyBudget.txt"));
+            string json = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MyDailyBudget.txt"));
             DailyBudget dailyBudget = JsonSerializer.Deserialize<DailyBudget>(json);
 
             TotalBudget = dailyBudget.TotalDailyBudget;
@@ -35,7 +38,7 @@ namespace EnergyMauiapp.ViewModels
             Tips = Helpers.ListManager.AddOneRandomTips();
             Header = new Header()
             {
-                Title = "Ny dagsbudget",
+                Title = "Nuvarande dagsbudget",
                 HeaderImageSource = "flowersheader.jpg"
             };
         }

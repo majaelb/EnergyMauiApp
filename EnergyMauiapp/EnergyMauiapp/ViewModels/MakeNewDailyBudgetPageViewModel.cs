@@ -14,6 +14,9 @@ namespace EnergyMauiapp.ViewModels
 {
     internal partial class MakeNewDailyBudgetPageViewModel : ObservableObject
     {
+        static UserSingleton user = UserSingleton.GetUserSessionData();
+
+
         [ObservableProperty]
         string tips;
 
@@ -32,25 +35,7 @@ namespace EnergyMauiapp.ViewModels
         public Header Header { get; set; }
         public MakeNewDailyBudgetPageViewModel()
         {
-            BudgetList = new ObservableCollection<Budget>()
-            {
-                new Budget{ Name = "Gå upp ur sängen", Points = 1 },
-                new Budget{ Name = "Ta på kläder", Points = 1 },
-                new Budget{ Name = "Ta mediciner", Points = 1 },
-                new Budget{ Name = "Titta på TV", Points = 1 },
-                new Budget{ Name = "Duscha", Points = 2 },
-                new Budget{ Name = "Fixa hår/smink", Points = 2 },
-                new Budget{ Name = "Surfa på internet", Points = 2 },
-                new Budget{ Name = "Läsa/studera", Points = 2 },
-                new Budget{ Name = "Tillaga och äta mat", Points = 3 },
-                new Budget{ Name = "Planera och socialisera", Points = 3 },
-                new Budget{ Name = "Lätt hushållsarbete", Points = 3 },
-                new Budget{ Name = "Köra bil", Points = 3 },
-                new Budget{ Name = "Arbeta", Points = 4 },
-                new Budget{ Name = "Shoppa", Points = 4 },
-                new Budget{ Name = "Vårdbesök", Points = 4 },
-                new Budget{ Name = "Lättare träning", Points = 4 }
-            };
+            BudgetList = Helpers.ListManager.MakeBudgetList();
 
             MyBudgetList = new ObservableCollection<Budget>();
 
@@ -68,7 +53,7 @@ namespace EnergyMauiapp.ViewModels
         {
             var budget = (Budget)b;
             MyBudgetList.Add(budget);
-            User.MyBudget += budget.Points;
+            user.MyBudget += budget.Points; //Använder Singleton-instansen
         }
 
         [RelayCommand]
@@ -76,7 +61,7 @@ namespace EnergyMauiapp.ViewModels
         {
             var budget = (Budget)b;
             MyBudgetList.Remove(budget);
-            User.MyBudget -= budget.Points;
+            user.MyBudget -= budget.Points; //Använder Singleton-instansen
         }
 
         [RelayCommand]
@@ -84,16 +69,15 @@ namespace EnergyMauiapp.ViewModels
         {
             var myDailyBudget = new DailyBudget()
             {
-                TotalDailyBudget = User.MyBudget,
+                TotalDailyBudget = user.MyBudget, //Använder Singleton-instansen
                 ChosenActivities = MyBudgetList
             };
 
-            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DailyBudget.txt");//address
+            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MyDailyBudget.txt");//address
             string jsonString = JsonSerializer.Serialize(myDailyBudget);
             File.WriteAllText(fileName, jsonString);
+           // string json = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MyDailyBudget.txt"));
 
-            //await DisplayAlert("Alert", "You have been alerted", "OK");
-            //TODO: Lägg till displayalert som säger "din budget är sparad" Funkar ej i viewmodel?
         }
     }
 }

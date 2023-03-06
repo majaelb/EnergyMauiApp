@@ -121,6 +121,7 @@
                 TextColor="DimGray"
                     Opacity="0.7"
             Command="{Binding SaveCommand}"
+                Clicked="OnSaveBtnClicked"
             HorizontalOptions="End"/>
         
             <Button

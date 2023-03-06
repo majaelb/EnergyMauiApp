@@ -4,7 +4,6 @@ namespace EnergyMauiapp.Views;
 
 public partial class FactsAndLinksPage : ContentPage
 {
-    //TODO: Label med tapcommand för länk
     ViewModels.FactsAndLinksPageViewModel vm = new();
 
     public FactsAndLinksPage()

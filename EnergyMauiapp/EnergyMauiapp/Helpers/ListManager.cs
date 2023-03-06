@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EnergyMauiapp.Models;
 
 namespace EnergyMauiapp.Helpers
 {
@@ -33,6 +35,31 @@ namespace EnergyMauiapp.Helpers
             "Om du är sjuk eller har sovit dåligt så har du mindre energi, begär inte lika mycket av dig själv dessa dagar."
             };
             return tips;
+        }
+
+        public static ObservableCollection<Budget> MakeBudgetList()
+        {
+            var budgetList = new ObservableCollection<Budget>()
+            {
+                new Budget{ Name = "Gå upp ur sängen", Points = 1 },
+                new Budget{ Name = "Ta på kläder", Points = 1 },
+                new Budget{ Name = "Ta mediciner", Points = 1 },
+                new Budget{ Name = "Titta på TV", Points = 1 },
+                new Budget{ Name = "Duscha", Points = 2 },
+                new Budget{ Name = "Fixa hår/smink", Points = 2 },
+                new Budget{ Name = "Surfa på internet", Points = 2 },
+                new Budget{ Name = "Läsa/studera", Points = 2 },
+                new Budget{ Name = "Tillaga och äta mat", Points = 3 },
+                new Budget{ Name = "Planera och socialisera", Points = 3 },
+                new Budget{ Name = "Lätt hushållsarbete", Points = 3 },
+                new Budget{ Name = "Köra bil", Points = 3 },
+                new Budget{ Name = "Arbeta", Points = 4 },
+                new Budget{ Name = "Shoppa", Points = 4 },
+                new Budget{ Name = "Vårdbesök", Points = 4 },
+                new Budget{ Name = "Lättare träning", Points = 4 }
+            };
+
+            return budgetList;
         }
 
 

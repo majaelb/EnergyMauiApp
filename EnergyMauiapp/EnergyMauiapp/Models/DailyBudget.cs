@@ -11,5 +11,6 @@ namespace EnergyMauiapp.Models
     {
         public int TotalDailyBudget { get; set; }
         public ObservableCollection<Budget> ChosenActivities { get; set; }
+
     }
 }

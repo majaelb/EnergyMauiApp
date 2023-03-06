@@ -21,14 +21,14 @@ namespace EnergyMauiapp.ViewModels
         [ObservableProperty]
         string tips;
 
-        [ObservableProperty]
-        ObservableCollection<string> links;
+        //[ObservableProperty]
+        //ObservableCollection<string> links;
         public Header Header { get; set; }
 
         public FactsAndLinksPageViewModel()
         {
             Tips = Helpers.ListManager.AddOneRandomTips();
-            Links = MakeLinkList();
+            //Links = MakeLinkList();
             Header = new Header()
             {
                 Title = "Fakta och länkar",
@@ -38,13 +38,12 @@ namespace EnergyMauiapp.ViewModels
 
         private async void LaunchBrowser(string url)
         {
-            //Debug.WriteLine($"*** Tap: {url}");
-
             await Browser.OpenAsync(url);
         }
 
         public static ObservableCollection<string> MakeLinkList()
         {
+            //TODO: Fixa listview eller behålla som det är?
             ObservableCollection<string> links = new()
             {
             "https://brainfatigue.se/behandling-mindfulness/",
