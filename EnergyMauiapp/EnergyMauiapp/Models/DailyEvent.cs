@@ -9,14 +9,8 @@ namespace EnergyMauiapp.Models
 {
     class DailyEvent
     {
-        //public ObservableCollection<Budget> ChosenActivities;
-
-        private static readonly DailyEvent _instance = new();
-
-        public static DailyEvent GetDailyEventData()
-        {
-            return _instance;
-        }
+        public DateTime Date { get; set; }
+        public int BudgetPoints { get; set; }
 
     }
 }

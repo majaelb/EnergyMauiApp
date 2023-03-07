@@ -114,8 +114,14 @@
 
 
 
-
-        <Button
+            <Button
+            Text="Spara dagens aktiviteter"
+                TextColor="DimGray"
+                    Opacity="0.7"
+                Command="{Binding SaveCommand}"
+            Clicked="OnSaveBtnClicked"
+            HorizontalOptions="Center"/>
+            <Button
             Text="Tillbaka"
                 TextColor="DimGray"
                     Opacity="0.7"

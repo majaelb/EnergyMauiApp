@@ -4,31 +4,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace EnergyMauiapp.Helpers
 {
     internal class FileManager
     {
-        //Ta bort files och ha bara txt-filen på datorn, använd sedan endast filename
-        //private static readonly string path = "..\\..\\..\\Files\\";
-        
+        public static List<T> GetListFromTxt<T>(string fileName)
+        {
+            string json = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), fileName));
+            List<T> activitiesFromTxt = JsonSerializer.Deserialize<List<T>>(json);
 
-       // private static readonly string path1 = "C:\\Users\\majal\\OneDrive\\Dokument\\System22\\Arkitektur av applikationer i .NET C#\\V 7 Fjärde veckan\\MauiApp1\\MauiApp1\\Files\\";
+            return activitiesFromTxt;
+        }
 
-        //public static async Task<List<SelfEstimation>> SplitFileToStringListAsync(string fileName)
-        //{
-        //    List<SelfEstimation> list = new();
-        //    string text = await File.ReadAllTextAsync(path1 + fileName);
-        //    string[] splitText = text.Split("|");
+        public static void WriteToFile<T>(string fileName, List<T> list)
+        {
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), fileName);
+            string jsonString = JsonSerializer.Serialize(list);
 
-        //    foreach (var item in splitText)
-        //    {
-        //        list.Add(new SelfEstimation()
-        //        {
-        //            Question = item
-        //        });
-        //    }
-        //    return list;
-        //}
+            File.WriteAllText(path, jsonString);
+        }
     }
 }

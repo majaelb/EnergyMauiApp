@@ -25,6 +25,13 @@ public partial class MyDayPage : ContentPage
         }
     }
 
+    private async void OnSaveBtnClicked(object sender, EventArgs e)
+    {
+        //TODO: Avbryt knapp om man ångrar sig?
+        await DisplayAlert("Klart", "Dagens aktiviteter är tillagda!", "OK");
+        await Navigation.PushAsync(new MyDayPage());
+    }
+
     private async void OnAddBtnClicked(object sender, EventArgs e)
     {
         await DisplayAlert("Klart", "Aktiviteten är tillagd!", "OK");

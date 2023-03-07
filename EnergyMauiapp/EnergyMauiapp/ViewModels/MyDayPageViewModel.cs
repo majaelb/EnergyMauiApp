@@ -10,6 +10,7 @@ using System.Text.Json;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Maui.Storage;
 using AngleSharp.Common;
+using EnergyMauiapp.Helpers;
 
 namespace EnergyMauiapp.ViewModels
 {
@@ -48,11 +49,7 @@ namespace EnergyMauiapp.ViewModels
             ActivityList = Helpers.ListManager.MakeBudgetList();
 
             MyDailyActivitiesList = new ObservableCollection<Budget>();
-            //TODO: Listan som visas ska inte vara new obs.coll. utan deserialiseras från listan som sparats via add nedan
-            //productsFromDb.ForEach(x => Products.Add(x)); Kolla i codealongen från shoppen när vi la till nya
-            //activitiesFromJson.ForEach(myDailyActivitiesList.Add); OnAppearing? Hämta från j-sonfilen med sparade aktiviteter för dagen och lägg till i obesrvablecollection
-
-
+           
             Tips = Helpers.ListManager.AddOneRandomTips();
             Header = new Header()
             {
@@ -61,8 +58,10 @@ namespace EnergyMauiapp.ViewModels
             };
         }
 
+        public void CountDailyBudget()
+        {
 
-     
+        }
 
         public List<Budget> GetSavedActivitiesFromTxt()
         {
@@ -107,25 +106,53 @@ namespace EnergyMauiapp.ViewModels
         }
 
         [RelayCommand]
-        public void Delete(object b)
+        public static void Delete(object b)
         {
             var budget = (Budget)b;
-            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Activities.txt");
-            string text = File.ReadAllText(fileName);
-            var dailyActivities = JsonSerializer.Deserialize<List<Budget>>(text);
+
+            string fileName = "Activities.txt";
+            List<Budget> dailyActivities = FileManager.GetListFromTxt<Budget>(fileName);
+
             int removeIndex = dailyActivities.FindIndex(b => b.Name == budget.Name);
             dailyActivities.RemoveAt(removeIndex);
-            string jsonString = JsonSerializer.Serialize(dailyActivities);
-            File.WriteAllText(fileName, jsonString);
+
+            FileManager.WriteToFile(fileName, dailyActivities);
         }
 
         [RelayCommand]
         public void Save()
         {
-            //Deserialisera hela mydailyactivities-json-textfil, lägg ihop poängen, spara dagens datum samt totalpoängen som json i textfil
-            //När det är gjort, töm mydailyactivities och ta bort tillhörande textfil så att inget ligger kvar till nästa dag
-            //TODO: Clicked = displayalert "dina aktiviteter för dagen är sparade"
+            //TODO: Ska inte gå att trycka på spara om inga aktiviteter finns tillagda samt om man redan sparat en gång idag
+            //Hämta sparade aktiviter och poäng från fil
+            string fileName1 = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Activities.txt");
+            string text1 = File.ReadAllText(fileName1);
+            var dailyActivities = JsonSerializer.Deserialize<List<Budget>>(text1);
 
+            //Skapa nytt daily event med datum och summa av dagens aktiviteter
+            DailyEvent dailyEvent = new() { Date = DateTime.Now, BudgetPoints = dailyActivities.Sum(p => p.Points) };
+            var dateAndUsedPoints = new List<DailyEvent>()
+            {
+                dailyEvent
+            };
+            //Skapa ny textfil att skriva datum och summa i
+            string fileName2 = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DateAndUsedPoints.txt");//address
+            if (!File.Exists(fileName2))
+            {
+                string jsonString = JsonSerializer.Serialize(dateAndUsedPoints);
+                File.WriteAllText(fileName2, jsonString);
+            }
+            else
+            {
+                string text2 = File.ReadAllText(fileName2);
+                var list = JsonSerializer.Deserialize<List<DailyEvent>>(text2);
+                list.Add(dailyEvent);
+                string jsonString = JsonSerializer.Serialize(list);
+                File.WriteAllText(fileName2, jsonString);
+            }
+
+            //Ta bort mydailyactivities (både obs.collection och filen) när datum och summa är sparat  
+            File.Delete(fileName1);
+            MyDailyActivitiesList.Clear();         
         }
     }
 }
