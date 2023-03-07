@@ -6,7 +6,7 @@ namespace EnergyMauiapp.Views;
 
 public partial class MakeNewSelfEstimationPage : ContentPage
 {
-    //TODO: Flytta över kod till ViewModel?
+    //TODO: Flytta över kod till ViewModel? Refaktorera ordentligt!
 
     int questionCount = 0;
     MakeNewSelfEstimationPageViewModel vm = new();

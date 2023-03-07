@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
 using static System.Net.Mime.MediaTypeNames;
+using EnergyMauiapp.Helpers;
 
 namespace EnergyMauiapp.ViewModels
 {
@@ -29,13 +30,13 @@ namespace EnergyMauiapp.ViewModels
         public Header Header { get; set; }
         public CurrentDailyBudgetPageViewModel()
         {
-            string json = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MyDailyBudget.txt"));
-            DailyBudget dailyBudget = JsonSerializer.Deserialize<DailyBudget>(json);
+            string fileName = "MyDailyBudget.txt";
+            DailyBudget dailyBudget = FileManager.GetObjectFromTxt<DailyBudget>(fileName);
 
             TotalBudget = dailyBudget.TotalDailyBudget;
             MyChosenActivities = dailyBudget.ChosenActivities;
 
-            Tips = Helpers.ListManager.AddOneRandomTips();
+            Tips = ListManager.AddOneRandomTips();
             Header = new Header()
             {
                 Title = "Nuvarande dagsbudget",

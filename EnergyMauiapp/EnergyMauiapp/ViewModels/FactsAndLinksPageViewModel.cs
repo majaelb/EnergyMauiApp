@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using EnergyMauiapp.Helpers;
 
 
 namespace EnergyMauiapp.ViewModels
@@ -27,7 +28,7 @@ namespace EnergyMauiapp.ViewModels
 
         public FactsAndLinksPageViewModel()
         {
-            Tips = Helpers.ListManager.AddOneRandomTips();
+            Tips = ListManager.AddOneRandomTips();
             //Links = MakeLinkList();
             Header = new Header()
             {

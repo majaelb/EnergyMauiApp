@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 using System.Text.Json;
+using EnergyMauiapp.Helpers;
 
 namespace EnergyMauiapp.ViewModels
 {
@@ -35,11 +36,11 @@ namespace EnergyMauiapp.ViewModels
         public Header Header { get; set; }
         public MakeNewDailyBudgetPageViewModel()
         {
-            BudgetList = Helpers.ListManager.MakeBudgetList();
+            BudgetList = ListManager.MakeBudgetList();
 
             MyBudgetList = new ObservableCollection<Budget>();
 
-            Tips = Helpers.ListManager.AddOneRandomTips();
+            Tips = ListManager.AddOneRandomTips();
 
             Header = new Header()
             {
@@ -72,12 +73,9 @@ namespace EnergyMauiapp.ViewModels
                 TotalDailyBudget = user.MyBudget, //Använder Singleton-instansen
                 ChosenActivities = MyBudgetList
             };
-
-            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MyDailyBudget.txt");//address
-            string jsonString = JsonSerializer.Serialize(myDailyBudget);
-            File.WriteAllText(fileName, jsonString);
-           // string json = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MyDailyBudget.txt"));
-
+            string fileName = "MyDailyBudget.txt";
+            string path = FileManager.GetFilePath(fileName);
+            FileManager.WriteObjectToFile(path, myDailyBudget);
         }
     }
 }

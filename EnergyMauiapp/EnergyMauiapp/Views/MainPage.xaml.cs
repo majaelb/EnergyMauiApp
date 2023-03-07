@@ -1,4 +1,5 @@
-﻿using EnergyMauiapp.Models;
+﻿using EnergyMauiapp.Helpers;
+using EnergyMauiapp.Models;
 using System.Text.Json;
 
 namespace EnergyMauiapp;
@@ -12,23 +13,35 @@ public partial class MainPage : ContentPage
         BindingContext = vm;
     }
 
-    //TODO: Använd shoppens metod för att lägga till produkt för att lägga till vad man gjort varje dag?
+    //TODO: Väder-api som visas på startskärmen?
+    //TODO: kolla felhantering överallt! Kan man väva in felhantering av att läsa/skriva till fil i Facade?
     private async void OnMyDayBtnClicked(object sender, EventArgs e)
     {
-        DailyBudget dailyBudget = null;
-        try
-        {
-            string json = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MyDailyBudget.txt"));
-            dailyBudget = JsonSerializer.Deserialize<DailyBudget>(json);
-        }
-        catch (Exception)
-        {
-            await DisplayAlert("Error", "Du måste göra en dagsbudget först!", "OK");
-        }
-        if(dailyBudget != null)
-        {
-            await Navigation.PushAsync(new Views.MyDayPage());
-        }
+        //int dayOfYear = PreviousDayManager.GetYesterDaysDayOfYear();
+        //if (dayOfYear == DateTime.Now.DayOfYear)
+        //{
+        //    await DisplayAlert("Error", "Du har redan sparat dagens aktiviteter!", "OK");
+        //}
+        //else
+        //{
+        //    await Navigation.PushAsync(new Views.MyDayPage());
+        //}
+
+        //DailyBudget dailyBudget = null;
+        //try
+        //{
+        //    string json = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MyDailyBudget.txt"));
+        //    dailyBudget = JsonSerializer.Deserialize<DailyBudget>(json);
+        //}
+        //catch (Exception)
+        //{
+        //    await DisplayAlert("Error", "Du måste göra en dagsbudget först!", "OK");
+        //}
+        //if(dailyBudget != null)
+        //{
+        //    await Navigation.PushAsync(new Views.MyDayPage());
+        //}
+        await Navigation.PushAsync(new Views.MyDayStartPage());
 
     }
     private async void OnYouTubeBtnClicked(object sender, EventArgs e)

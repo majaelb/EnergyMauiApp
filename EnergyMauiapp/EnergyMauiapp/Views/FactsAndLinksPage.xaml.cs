@@ -16,6 +16,6 @@ public partial class FactsAndLinksPage : ContentPage
 
     private async void OnBackClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new MainPage()); //TODO: Pusha ny sida för att ladda nya tips?
+        await Navigation.PushAsync(new MainPage()); 
     }
 }

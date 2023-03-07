@@ -45,8 +45,14 @@
             TextColor="DimGray"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+            <Label 
+            Text="{Binding TotalBudget}"
+            FontSize="20"
+            TextColor="DimGray"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
 
-        <ListView
+            <ListView
             ItemsSource="{Binding ActivityList}"
                 >
             <ListView.ItemTemplate>

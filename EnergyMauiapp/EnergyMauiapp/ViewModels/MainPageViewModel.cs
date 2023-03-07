@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EnergyMauiapp.Helpers;
 
 namespace EnergyMauiapp.ViewModels
 {
@@ -18,7 +19,7 @@ namespace EnergyMauiapp.ViewModels
 
         public MainPageViewModel()
         {
-            Tips = Helpers.ListManager.AddOneRandomTips();
+            Tips = ListManager.AddOneRandomTips();
             Header = new Header()
             {
                 Title = "Energiappen",

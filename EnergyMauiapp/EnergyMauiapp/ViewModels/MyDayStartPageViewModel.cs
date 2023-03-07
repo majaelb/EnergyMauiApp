@@ -1,25 +1,27 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using EnergyMauiapp.Models;
+using EnergyMauiapp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EnergyMauiapp.Helpers;
+using EnergyMauiapp.Models;
 
 namespace EnergyMauiapp.ViewModels
 {
-    internal partial class DailyBudgetStartPageViewModel : ObservableObject
+    internal partial class MyDayStartPageViewModel : ObservableObject
     {
         [ObservableProperty]
         string tips;
+
         public Header Header { get; set; }
-        public DailyBudgetStartPageViewModel()
+
+        public MyDayStartPageViewModel()
         {
             Tips = ListManager.AddOneRandomTips();
             Header = new Header()
             {
-                Title = "Dagsbudget",
+                Title = "Energiappen",
                 HeaderImageSource = "flowersheader.jpg"
             };
         }

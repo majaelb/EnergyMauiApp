@@ -24,6 +24,12 @@
     <MauiXaml Update="Views\MyDayPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\MyDayStartPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Views\MyPreviousDaysPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Views\PreviousSelfEstimationsPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

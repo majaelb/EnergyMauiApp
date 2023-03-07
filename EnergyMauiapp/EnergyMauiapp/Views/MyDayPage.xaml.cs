@@ -25,9 +25,11 @@ public partial class MyDayPage : ContentPage
         }
     }
 
+    //TODO: Två undersidor till denna, en för att lägga till dagens aktiviteter (går bara att trycka på om man inte redan sparat något på dagens datum) samt en för tidigare dagar som listas
+
     private async void OnSaveBtnClicked(object sender, EventArgs e)
     {
-        //TODO: Avbryt knapp om man ångrar sig?
+        //TODO: Avbrytknapp om man ångrar sig?
         await DisplayAlert("Klart", "Dagens aktiviteter är tillagda!", "OK");
         await Navigation.PushAsync(new MyDayPage());
     }
