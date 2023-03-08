@@ -29,7 +29,7 @@ public partial class MyDayStartPage : ContentPage
         string fileName = "MyDailyBudget.txt";
         try
         {
-            dailyBudget = FileManager.GetObjectFromTxt<DailyBudget>(fileName);
+            dailyBudget = await FileManager.GetObjectFromTxt<DailyBudget>(fileName);
         }
         catch (Exception)
         {

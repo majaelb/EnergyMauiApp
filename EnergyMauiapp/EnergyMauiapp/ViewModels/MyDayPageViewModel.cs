@@ -41,9 +41,12 @@ namespace EnergyMauiapp.ViewModels
         public MyDayPageViewModel()
         {
             string fileName = "MyDailyBudget.txt";
-            DailyBudget dailyBudget = FileManager.GetObjectFromTxt<DailyBudget>(fileName);
-            int diff = CountTodaysBudget();
-            TotalBudget = dailyBudget.TotalDailyBudget - diff;
+            var dailyBudget = Task.Run(() => FileManager.GetObjectFromTxt<DailyBudget>(fileName));
+            dailyBudget.Wait();
+
+            var diff = Task.Run(CountTodaysBudget);
+            diff.Wait();
+            TotalBudget = dailyBudget.Result.TotalDailyBudget - diff.Result;
 
             ActivityList = ListManager.MakeBudgetList();
 
@@ -57,18 +60,17 @@ namespace EnergyMauiapp.ViewModels
             };
         }
 
-
         //TODO: Button för "har du sovit dåligt eller är sjuk?" som också drar av x antal poäng
-        public static int CountTodaysBudget()
+        public static async Task<int> CountTodaysBudget()
         {
             string fileName = "MyDailyBudget.txt";
-            DailyBudget dailyBudget = FileManager.GetObjectFromTxt<DailyBudget>(fileName);
+            DailyBudget dailyBudget = await FileManager.GetObjectFromTxt<DailyBudget>(fileName);
             int yesterDaysUsedPoints = 0;
             int yesterDaysDayOfYear = 0;
             try
             {
-                yesterDaysUsedPoints = PreviousDayManager.GetYesterDaysUsedBudgetPoints();
-                yesterDaysDayOfYear = PreviousDayManager.GetYesterDaysDayOfYear();
+                yesterDaysUsedPoints = await PreviousDayManager.GetYesterDaysUsedBudgetPoints();
+                yesterDaysDayOfYear = await PreviousDayManager.GetYesterDaysDayOfYear();
             }
             catch
             {
@@ -85,20 +87,18 @@ namespace EnergyMauiapp.ViewModels
                 return 0;
             }
         }
-
+   
         //Visas OnAppearing 
-        //TODO: Hur göra asyncron på riktigt?
         public async Task GetSavedActivities()
         {
             string fileName = "Activities.txt";
-            List<Budget> activitiesFromTxt = FileManager.GetObjectFromTxt<List<Budget>>(fileName);
-            await Task.Delay(100);
+            List<Budget> activitiesFromTxt = await FileManager.GetObjectFromTxt<List<Budget>>(fileName);
             activitiesFromTxt.ForEach(MyDailyActivitiesList.Add);
         }
 
 
         [RelayCommand]
-        public static void Add(object b)
+        public async void Add(object b)
         {
             var budget = (Budget)b;
 
@@ -114,23 +114,25 @@ namespace EnergyMauiapp.ViewModels
             }
             else
             {
-                List<Budget> dailyActivities = FileManager.GetObjectFromTxt<List<Budget>>(fileName);
+                List<Budget> dailyActivities = await FileManager.GetObjectFromTxt<List<Budget>>(fileName);
                 dailyActivities.Add(budget);
                 FileManager.WriteObjectToFile(fileName, dailyActivities);
             }
+            MyDailyActivitiesList.Add(budget);
         }
 
         [RelayCommand]
-        public static void Delete(object b)
+        public  async void Delete(object b)
         {
             var budget = (Budget)b;
 
             string fileName = "Activities.txt";
-            List<Budget> dailyActivities = FileManager.GetObjectFromTxt<List<Budget>>(fileName);
+            List<Budget> dailyActivities = await FileManager.GetObjectFromTxt<List<Budget>>(fileName);
 
             int removeIndex = dailyActivities.FindIndex(b => b.Name == budget.Name);
             dailyActivities.RemoveAt(removeIndex);
             FileManager.WriteObjectToFile(fileName, dailyActivities);
+            MyDailyActivitiesList.Remove(budget);
         }
 
         //TODO: Facade: Save daily event? 
@@ -142,9 +144,9 @@ namespace EnergyMauiapp.ViewModels
             List<Budget> dailyActivities = null;
             try
             {
-                dailyActivities = FileManager.GetObjectFromTxt<List<Budget>>(fileName);
+                dailyActivities = await FileManager.GetObjectFromTxt<List<Budget>>(fileName);
             }
-            //Om ingen fill finns sparad får man ett felmeddelande
+            //Om ingen fil finns sparad får man ett felmeddelande
             catch (Exception)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Du har inte lagt till några aktiviteter", "OK");
@@ -163,12 +165,12 @@ namespace EnergyMauiapp.ViewModels
             if (answer == true)
             {
                 string fileName2 = "MyDailyBudget.txt";
-                DailyBudget dailyBudget = FileManager.GetObjectFromTxt<DailyBudget>(fileName2);
-                int diff = CountTodaysBudget();
+                DailyBudget dailyBudget = await FileManager.GetObjectFromTxt<DailyBudget>(fileName2);
+                int diff = await CountTodaysBudget();
                 int totalBudget = dailyBudget.TotalDailyBudget - diff;
 
                 //Skapar nytt daily event med datum, dagens totalbudget med ev avdrag, summa av poängen av dagens aktiviteter samt en lista med alla aktiviteterna(Med namn och poäng).
-                DailyEvent dailyEvent = new() { Date = DateTime.Now, DailyBudget = totalBudget, UsedBudgetPoints = dailyActivities.Sum(p => p.Points), MyActivities = dailyActivities };
+                DailyEvent dailyEvent = new() { Date = DateTime.Now.AddDays(-1), DailyBudget = totalBudget, UsedBudgetPoints = dailyActivities.Sum(p => p.Points), MyActivities = dailyActivities };
                 var dateAndUsedPoints = new List<DailyEvent>()
                 {
                     dailyEvent
@@ -182,7 +184,7 @@ namespace EnergyMauiapp.ViewModels
                 }
                 else
                 {
-                    List<DailyEvent> dailyEvents = FileManager.GetObjectFromTxt<List<DailyEvent>>(path);
+                    List<DailyEvent> dailyEvents = await FileManager.GetObjectFromTxt<List<DailyEvent>>(path);
                     dailyEvents.Add(dailyEvent);
                     FileManager.WriteObjectToFile(path, dailyEvents);
                 }

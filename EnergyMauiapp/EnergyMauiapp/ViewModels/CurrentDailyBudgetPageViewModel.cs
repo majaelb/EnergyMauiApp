@@ -31,10 +31,11 @@ namespace EnergyMauiapp.ViewModels
         public CurrentDailyBudgetPageViewModel()
         {
             string fileName = "MyDailyBudget.txt";
-            DailyBudget dailyBudget = FileManager.GetObjectFromTxt<DailyBudget>(fileName);
-
-            TotalBudget = dailyBudget.TotalDailyBudget;
-            MyChosenActivities = dailyBudget.ChosenActivities;
+            var task = Task.Run(() =>  FileManager.GetObjectFromTxt<DailyBudget>(fileName));
+            task.Wait();
+            TotalBudget = task.Result.TotalDailyBudget;
+            MyChosenActivities = task.Result.ChosenActivities;
+            
 
             Tips = ListManager.AddOneRandomTips();
             Header = new Header()

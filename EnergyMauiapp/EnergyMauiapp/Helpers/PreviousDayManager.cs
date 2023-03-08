@@ -9,19 +9,19 @@ namespace EnergyMauiapp.Helpers
 {
     internal class PreviousDayManager
     {
-        public static int GetYesterDaysUsedBudgetPoints()
+        public static async Task<int> GetYesterDaysUsedBudgetPoints()
         {
             string fileName = "DatePointsAndActivity.txt";
-            List<DailyEvent> datesAndUsedPoints = FileManager.GetObjectFromTxt<List<DailyEvent>>(fileName);
+            List<DailyEvent> datesAndUsedPoints = await FileManager.GetObjectFromTxt<List<DailyEvent>>(fileName);
             int yesterDaysUsedPoints = datesAndUsedPoints.Last().UsedBudgetPoints;
 
             return yesterDaysUsedPoints;
         }
 
-        public static int GetYesterDaysDayOfYear()
+        public static async Task<int> GetYesterDaysDayOfYear()
         {
             string fileName = "DatePointsAndActivity.txt";
-            List<DailyEvent> datesAndUsedPoints = FileManager.GetObjectFromTxt<List<DailyEvent>>(fileName);
+            List<DailyEvent> datesAndUsedPoints = await FileManager.GetObjectFromTxt<List<DailyEvent>>(fileName);
             int yesterDaysDayOfYear = datesAndUsedPoints.Last().Date.DayOfYear;
 
             return yesterDaysDayOfYear;

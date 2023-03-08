@@ -42,7 +42,11 @@ namespace EnergyMauiapp.ViewModels
 
         public MyPreviousDaysPageViewModel()
         {
-            MyDailyActivitiesList = GetSavedActivities();
+            
+            var task = Task.Run(() => GetSavedActivities());
+            task.Wait();
+
+            MyDailyActivitiesList = task.Result;
 
 
             Tips = ListManager.AddOneRandomTips();
@@ -53,10 +57,10 @@ namespace EnergyMauiapp.ViewModels
             };
         }
 
-        public ObservableCollection<DailyEvent> GetSavedActivities()
+        public static async Task<ObservableCollection<DailyEvent>> GetSavedActivities()
         {
             string fileName = "DatePointsAndActivity.txt";
-            ObservableCollection<DailyEvent> activitiesFromTxt = FileManager.GetObjectFromTxt<ObservableCollection<DailyEvent>>(fileName);
+            ObservableCollection<DailyEvent> activitiesFromTxt = await FileManager.GetObjectFromTxt<ObservableCollection<DailyEvent>>(fileName);
 
             return activitiesFromTxt;
         }

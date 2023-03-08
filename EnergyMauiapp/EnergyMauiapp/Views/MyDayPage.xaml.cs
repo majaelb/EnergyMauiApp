@@ -13,13 +13,13 @@ public partial class MyDayPage : ContentPage
     }
 
 
-    protected override async void OnAppearing()
+    protected override void OnAppearing()
     {
         //Try catch så det inte kraschar om man inte lagt till någon aktivitet ännu
         try
         {
             base.OnAppearing();
-            await (BindingContext as MyDayPageViewModel).GetSavedActivities();
+            Task t = (BindingContext as MyDayPageViewModel).GetSavedActivities();
         }
         catch (Exception)
         {
@@ -27,18 +27,14 @@ public partial class MyDayPage : ContentPage
         }
     }
 
-
-
     private async void OnAddBtnClicked(object sender, EventArgs e)
     {
         await DisplayAlert("Klart", "Aktiviteten är tillagd!", "OK");
-        await Navigation.PushAsync(new MyDayPage());
     }
 
     private async void OnDeleteBtnClicked(object sender, EventArgs e)
     {
         await DisplayAlert("Klart", "Aktiviteten är borttagen!", "OK");
-        await Navigation.PushAsync(new MyDayPage());
     }
 
     private async void OnBackClicked(object sender, EventArgs e)

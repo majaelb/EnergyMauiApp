@@ -18,21 +18,22 @@ namespace EnergyMauiapp.Helpers
             return path;
         }
       
-        public static T GetObjectFromTxt<T>(string fileName)
+        //TODO: ändra allt till async, som anropar denna
+        public static async Task<T> GetObjectFromTxt<T>(string fileName)
         {
             string path = GetFilePath(fileName);
-            string json = File.ReadAllText(path);
+            string json = await File.ReadAllTextAsync(path);
             T obj = JsonSerializer.Deserialize<T>(json);
 
             return obj;
         }
 
-        public static void WriteObjectToFile<T>(string fileName, T obj)
+        public static async void WriteObjectToFile<T>(string fileName, T obj)
         {
             string path = GetFilePath(fileName);
             string jsonString = JsonSerializer.Serialize(obj);
 
-            File.WriteAllText(path, jsonString);
+            await File.WriteAllTextAsync(path, jsonString);
         }
 
         //public static void WriteListToFile<T>(string fileName, List<T> list)

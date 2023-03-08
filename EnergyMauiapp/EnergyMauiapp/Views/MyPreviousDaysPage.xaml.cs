@@ -31,7 +31,7 @@ public partial class MyPreviousDaysPage : ContentPage
         }
     }
 
-
+    //TODO: Kunna klicka på resultatet flera gånger i rad
     private async void OnBackClicked(object sender, EventArgs e)
     {
         await Navigation.PopAsync();

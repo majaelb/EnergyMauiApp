@@ -16,6 +16,8 @@ public partial class MakeNewSelfEstimationPage : ContentPage
         InitializeComponent();
         BindingContext = vm;
     }
+    //Facade där inparametrar är selftesttest och questioncount, en facade infotextcomponent, questioncomponent osv. I dessa bygger jag in felhanteringen. 
+    //
     private void OnNextBtnClicked(object sender, EventArgs e)
     {
         List<SelfEstTest> selfEstTest = SelfEstTest.MakeQuestionList();
