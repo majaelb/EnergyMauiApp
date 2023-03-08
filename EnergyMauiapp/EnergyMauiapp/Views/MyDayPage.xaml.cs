@@ -1,3 +1,5 @@
+using EnergyMauiapp.Helpers;
+using EnergyMauiapp.Models;
 using EnergyMauiapp.ViewModels;
 namespace EnergyMauiapp.Views;
 
@@ -13,7 +15,7 @@ public partial class MyDayPage : ContentPage
 
     protected override async void OnAppearing()
     {
-        //Try catch så det inte kraschar om man inte lagt till någon aktivitet ännu?
+        //Try catch så det inte kraschar om man inte lagt till någon aktivitet ännu
         try
         {
             base.OnAppearing();
@@ -25,14 +27,7 @@ public partial class MyDayPage : ContentPage
         }
     }
 
-    //TODO: Två undersidor till denna, en för att lägga till dagens aktiviteter (går bara att trycka på om man inte redan sparat något på dagens datum) samt en för tidigare dagar som listas
 
-    private async void OnSaveBtnClicked(object sender, EventArgs e)
-    {
-        //TODO: Avbrytknapp om man ångrar sig?
-        await DisplayAlert("Klart", "Dagens aktiviteter är tillagda!", "OK");
-        await Navigation.PushAsync(new MyDayPage());
-    }
 
     private async void OnAddBtnClicked(object sender, EventArgs e)
     {

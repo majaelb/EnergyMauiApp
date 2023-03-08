@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnergyMauiapp.Views.MyPreviousDaysDetailPage"
+             Title="MyPreviousDaysDetailPage">
+    <VerticalStackLayout>
+        <Label
+            Text="{Binding Date}"
+            HorizontalOptions="Center"
+            Style="{DynamicResource TitleStyle}"/>
+        <Label
+            Text="{Binding DailyBudget}"
+            FontSize="25"
+            HorizontalOptions="Center"/>
+        <Label
+            Text="{Binding UsedBudgetPoints}"
+            HorizontalOptions="Center"
+            Style="{DynamicResource SubtitleStyle}"/>
+        <ListView
+            ItemsSource="{Binding MyActivities}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid 
+                            Padding="10"
+                            RowDefinitions="Auto, *"
+                            ColumnDefinitions="200, 200, 100"
+                            ColumnSpacing="20">
+
+                            <Label Grid.Column="1"
+                                   Text="{Binding Name}"
+                                   FontSize="32"/>
+                            <Label Grid.Row="1"
+                                   Grid.Column="1"
+                                   Text="{Binding Points}"
+                                   FontSize="15"/>
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button
+            Text="Tillbaka"
+                TextColor="DimGray"
+                    Opacity="0.7"
+            Clicked="OnBackClicked"
+            HorizontalOptions="Center"/>
+    </VerticalStackLayout>
+</ContentPage>

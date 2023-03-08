@@ -70,6 +70,9 @@
 	  <Compile Update="Views\DailyBudgetStartPage.xaml.cs">
 	    <DependentUpon>DailyBudgetStartPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Views\MyPreviousDaysDetailPage.xaml.cs">
+	    <DependentUpon>MyPreviousDaysDetailPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Views\SelfEstimationStartPage.xaml.cs">
 	    <DependentUpon>SelfEstimationStartPage.xaml</DependentUpon>
 	  </Compile>
@@ -95,6 +98,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\MyDayStartPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MyPreviousDaysDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\MyPreviousDaysPage.xaml">

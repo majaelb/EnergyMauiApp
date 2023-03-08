@@ -14,6 +14,5 @@ namespace EnergyMauiapp.Models
         public static double EstResult;
         public static Dictionary<DateTime, double> DateAndEstimationResult = new();
         public static List<SelfEstimation> SelfEstimations = new();
-
     }
 }

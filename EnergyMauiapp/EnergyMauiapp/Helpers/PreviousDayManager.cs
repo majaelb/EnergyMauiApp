@@ -11,16 +11,16 @@ namespace EnergyMauiapp.Helpers
     {
         public static int GetYesterDaysUsedBudgetPoints()
         {
-            string fileName = "DateAndUsedPoints.txt";
+            string fileName = "DatePointsAndActivity.txt";
             List<DailyEvent> datesAndUsedPoints = FileManager.GetObjectFromTxt<List<DailyEvent>>(fileName);
-            int yesterDaysUsedPoints = datesAndUsedPoints.Last().BudgetPoints;
+            int yesterDaysUsedPoints = datesAndUsedPoints.Last().UsedBudgetPoints;
 
             return yesterDaysUsedPoints;
         }
 
         public static int GetYesterDaysDayOfYear()
         {
-            string fileName = "DateAndUsedPoints.txt";
+            string fileName = "DatePointsAndActivity.txt";
             List<DailyEvent> datesAndUsedPoints = FileManager.GetObjectFromTxt<List<DailyEvent>>(fileName);
             int yesterDaysDayOfYear = datesAndUsedPoints.Last().Date.DayOfYear;
 

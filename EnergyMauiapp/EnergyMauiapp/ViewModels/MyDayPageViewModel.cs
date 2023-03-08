@@ -11,6 +11,7 @@ using CommunityToolkit.Mvvm.Input;
 using Microsoft.Maui.Storage;
 using AngleSharp.Common;
 using EnergyMauiapp.Helpers;
+using EnergyMauiapp.Views;
 
 namespace EnergyMauiapp.ViewModels
 {
@@ -33,8 +34,7 @@ namespace EnergyMauiapp.ViewModels
         ObservableCollection<Budget> activityList; //Visar hela listan med valbara aktiviteter
 
         [ObservableProperty]
-        ObservableCollection<Budget> myDailyActivitiesList; //Visar de aktiviteter man valt för dagen
-
+        public ObservableCollection<Budget> myDailyActivitiesList; //Visar de aktiviteter man valt för dagen
 
         public Header Header { get; set; }
 
@@ -48,7 +48,7 @@ namespace EnergyMauiapp.ViewModels
             ActivityList = ListManager.MakeBudgetList();
 
             MyDailyActivitiesList = new ObservableCollection<Budget>();
-           
+
             Tips = ListManager.AddOneRandomTips();
             Header = new Header()
             {
@@ -63,9 +63,17 @@ namespace EnergyMauiapp.ViewModels
         {
             string fileName = "MyDailyBudget.txt";
             DailyBudget dailyBudget = FileManager.GetObjectFromTxt<DailyBudget>(fileName);
+            int yesterDaysUsedPoints = 0;
+            int yesterDaysDayOfYear = 0;
+            try
+            {
+                yesterDaysUsedPoints = PreviousDayManager.GetYesterDaysUsedBudgetPoints();
+                yesterDaysDayOfYear = PreviousDayManager.GetYesterDaysDayOfYear();
+            }
+            catch
+            {
 
-            int yesterDaysUsedPoints = PreviousDayManager.GetYesterDaysUsedBudgetPoints();
-            int yesterDaysDayOfYear = PreviousDayManager.GetYesterDaysDayOfYear();
+            }
 
             if (yesterDaysUsedPoints > dailyBudget.TotalDailyBudget && yesterDaysDayOfYear + 1 == DateTime.Now.DayOfYear)
             {
@@ -78,7 +86,8 @@ namespace EnergyMauiapp.ViewModels
             }
         }
 
-        //Visas OnAppearing //TODO: Hur göra asyncron på riktigt?
+        //Visas OnAppearing 
+        //TODO: Hur göra asyncron på riktigt?
         public async Task GetSavedActivities()
         {
             string fileName = "Activities.txt";
@@ -88,7 +97,6 @@ namespace EnergyMauiapp.ViewModels
         }
 
 
-        //TODO: Facade: Save daily event? 
         [RelayCommand]
         public static void Add(object b)
         {
@@ -122,43 +130,74 @@ namespace EnergyMauiapp.ViewModels
 
             int removeIndex = dailyActivities.FindIndex(b => b.Name == budget.Name);
             dailyActivities.RemoveAt(removeIndex);
-
             FileManager.WriteObjectToFile(fileName, dailyActivities);
         }
 
+        //TODO: Facade: Save daily event? 
         [RelayCommand]
-        public void Save()
+        public async static void Save()
         {
-            //TODO: Ska inte gå att trycka på spara om inga aktiviteter finns tillagda
-            //Hämta sparade aktiviter och poäng från fil
+            //Försöker hämta sparade aktiviter och poäng från fil
             string fileName = "Activities.txt";
-            List<Budget> dailyActivities = FileManager.GetObjectFromTxt<List<Budget>>(fileName);
-
-            //TODO: Lägg till lista av aktiviteter i dailyevent också? Så att de kan visas på separat sida av tidigare dagars aktivitet
-            //Skapa nytt daily event med datum och summa av dagens aktiviteter
-            DailyEvent dailyEvent = new() { Date = DateTime.Now, BudgetPoints = dailyActivities.Sum(p => p.Points) };
-            var dateAndUsedPoints = new List<DailyEvent>()
+            List<Budget> dailyActivities = null;
+            try
             {
-                dailyEvent
-            };
-            //Skapa ny textfil att skriva datum och summa i
-            string fileName2 = "DateAndUsedPoints.txt";
-            string path = FileManager.GetFilePath(fileName2);
-            if (!File.Exists(path))
+                dailyActivities = FileManager.GetObjectFromTxt<List<Budget>>(fileName);
+            }
+            //Om ingen fill finns sparad får man ett felmeddelande
+            catch (Exception)
             {
-                FileManager.WriteObjectToFile(path, dateAndUsedPoints);
+                await Application.Current.MainPage.DisplayAlert("Error", "Du har inte lagt till några aktiviteter", "OK");
+            }
+            bool answer = false;
+            //Kontrollerar om det finns något innehåll i filen (Om man lagt till en aktivitet och sen tagit bort den, så att listan blivit tom, men filen ändå skapats)
+            if (dailyActivities.Any())
+            {
+                answer = await Application.Current.MainPage.DisplayAlert("Confirm", "Är du säker på att du vill spara alla dagens aktiviteter? Du kan inte spara något mer för denna dag.", "OK", "Avbryt");
             }
             else
             {
-                List<DailyEvent> dailyEvents = FileManager.GetObjectFromTxt<List<DailyEvent>>(path);
-                dailyEvents.Add(dailyEvent);
-                FileManager.WriteObjectToFile(path, dailyEvents);
+                await Application.Current.MainPage.DisplayAlert("Error", "Du har inte lagt till några aktiviteter", "OK");
             }
 
-            //Tar bort mydailyactivities (både obs.collection och filen) när datum och summa är sparat  
-            string path2 = FileManager.GetFilePath(fileName);
-            File.Delete(path2);
-            MyDailyActivitiesList.Clear();         
+            if (answer == true)
+            {
+                string fileName2 = "MyDailyBudget.txt";
+                DailyBudget dailyBudget = FileManager.GetObjectFromTxt<DailyBudget>(fileName2);
+                int diff = CountTodaysBudget();
+                int totalBudget = dailyBudget.TotalDailyBudget - diff;
+
+                //Skapar nytt daily event med datum, dagens totalbudget med ev avdrag, summa av poängen av dagens aktiviteter samt en lista med alla aktiviteterna(Med namn och poäng).
+                DailyEvent dailyEvent = new() { Date = DateTime.Now, DailyBudget = totalBudget, UsedBudgetPoints = dailyActivities.Sum(p => p.Points), MyActivities = dailyActivities };
+                var dateAndUsedPoints = new List<DailyEvent>()
+                {
+                    dailyEvent
+                };
+                //Skapar ny textfil att skriva datum och summa i
+                string fileName3 = "DatePointsAndActivity.txt";
+                string path = FileManager.GetFilePath(fileName3);
+                if (!File.Exists(path))
+                {
+                    FileManager.WriteObjectToFile(path, dateAndUsedPoints);
+                }
+                else
+                {
+                    List<DailyEvent> dailyEvents = FileManager.GetObjectFromTxt<List<DailyEvent>>(path);
+                    dailyEvents.Add(dailyEvent);
+                    FileManager.WriteObjectToFile(path, dailyEvents);
+                }
+
+                //Tar bort filen med sparade aktiviteter när datum och summa är sparat  
+                string path2 = FileManager.GetFilePath(fileName);
+                File.Delete(path2);
+                await Application.Current.MainPage.DisplayAlert("Klart", "Dagens aktiviteter är sparade!", "OK");
+                await Application.Current.MainPage.Navigation.PushAsync(new MyDayStartPage());
+            }
+            else
+            {
+                return;
+            }
         }
+
     }
 }

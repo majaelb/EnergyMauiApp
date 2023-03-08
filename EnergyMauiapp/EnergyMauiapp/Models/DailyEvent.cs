@@ -9,8 +9,9 @@ namespace EnergyMauiapp.Models
 {
     class DailyEvent
     {
-        public DateTime Date { get; set; }
-        public int BudgetPoints { get; set; }
-
+        public DateTime Date { get; set; } 
+        public int DailyBudget { get; set; } //totalbudgeten för dagen, med eventuella avdrag borträknade
+        public int UsedBudgetPoints { get; set; } //så många poäng man gjorde av med denna dag
+        public List<Budget> MyActivities { get; set; } //lista av aktiviteter, med namn och poäng
     }
 }

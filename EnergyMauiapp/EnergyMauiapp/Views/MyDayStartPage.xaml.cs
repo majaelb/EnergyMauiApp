@@ -24,30 +24,26 @@ public partial class MyDayStartPage : ContentPage
 
     private async void OnMyDayBtnClicked(object sender, EventArgs e)
     {
-        //TODO: Båda dessa saker kan hända när man trycker på knappen. Hantera båda samtidigt?
-        //Man har inte gjort någon dagsbudget
+        //Om man har inte gjort någon dagsbudget får man ett felmeddelande och kommer inte in på sidan:
         DailyBudget dailyBudget = null;
+        string fileName = "MyDailyBudget.txt";
         try
         {
-            string json = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MyDailyBudget.txt"));
-            dailyBudget = JsonSerializer.Deserialize<DailyBudget>(json);
+            dailyBudget = FileManager.GetObjectFromTxt<DailyBudget>(fileName);
         }
         catch (Exception)
         {
             await DisplayAlert("Error", "Du måste göra en dagsbudget först!", "OK");
         }
-        if (dailyBudget != null)
-        {
-            await Navigation.PushAsync(new Views.MyDayPage());
-        }
-
-        //Man har redan sparat dagens aktiviteter
-        int dayOfYear = PreviousDayManager.GetYesterDaysDayOfYear();
-        if (dayOfYear == DateTime.Now.DayOfYear)
-        {
-            await DisplayAlert("Error", "Du har redan sparat dagens aktiviteter!", "OK");
-        }
-        else
+        //Om man redan har sparat dagens aktiviteter får man också ett felmeddelande och kommer inte in på sidan
+        //TODO: Kommentera in detta när programmet körs på riktigt
+        //int dayOfYear = PreviousDayManager.GetYesterDaysDayOfYear();
+        //if (dayOfYear == DateTime.Now.DayOfYear)
+        //{
+        //    await DisplayAlert("Error", "Du har redan sparat dagens aktiviteter!", "OK");
+        //}
+        //Om det finns både dagsbudget och man inte redan sparat något för dagen så kommer man in på sidan och kan fylla i aktiviteter
+        /*else*/ if(/*dayOfYear != DateTime.Now.DayOfYear &&*/ dailyBudget != null) 
         {
             await Navigation.PushAsync(new MyDayPage());
         }
