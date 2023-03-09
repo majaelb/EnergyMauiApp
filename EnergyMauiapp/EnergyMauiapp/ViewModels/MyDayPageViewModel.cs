@@ -153,11 +153,11 @@ namespace EnergyMauiapp.ViewModels
             }
             bool answer = false;
             //Kontrollerar om det finns något innehåll i filen (Om man lagt till en aktivitet och sen tagit bort den, så att listan blivit tom, men filen ändå skapats)
-            if (dailyActivities.Any())
+            if (dailyActivities != null && dailyActivities.Any())
             {
                 answer = await Application.Current.MainPage.DisplayAlert("Confirm", "Är du säker på att du vill spara alla dagens aktiviteter? Du kan inte spara något mer för denna dag.", "OK", "Avbryt");
             }
-            else
+            else if(dailyActivities != null && !dailyActivities.Any())
             {
                 await Application.Current.MainPage.DisplayAlert("Error", "Du har inte lagt till några aktiviteter", "OK");
             }

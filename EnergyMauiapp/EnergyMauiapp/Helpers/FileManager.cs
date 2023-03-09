@@ -18,7 +18,6 @@ namespace EnergyMauiapp.Helpers
             return path;
         }
       
-        //TODO: ändra allt till async, som anropar denna
         public static async Task<T> GetObjectFromTxt<T>(string fileName)
         {
             string path = GetFilePath(fileName);
@@ -36,22 +35,6 @@ namespace EnergyMauiapp.Helpers
             await File.WriteAllTextAsync(path, jsonString);
         }
 
-        //public static void WriteListToFile<T>(string fileName, List<T> list)
-        //{
-        //    string path = GetFilePath(fileName);
-        //    string jsonString = JsonSerializer.Serialize(list);
-
-        //    File.WriteAllText(path, jsonString);
-        //}
-
-
-        //public static List<T> GetListFromTxt<T>(string fileName)
-        //{
-        //    string path = GetFilePath(fileName);
-        //    string json = File.ReadAllText(path);
-        //    List<T> list = JsonSerializer.Deserialize<List<T>>(json);
-
-        //    return list;
-        //}
+        
     }
 }

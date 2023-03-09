@@ -58,11 +58,12 @@
                     <ViewCell>
                         <Grid 
                             Padding="10"
-                            ColumnDefinitions=".25*, .25*, .25*, .25*"
+                            ColumnDefinitions=".33*, .33*, .33*"
                             ColumnSpacing="20">
                             <Label Grid.Column="1"
                                    Text="{Binding Name}"
-                                   HorizontalOptions="End"
+                                   HorizontalOptions="Center"
+                                   TextColor="DimGray"
                                    FontSize="14"/>
                         </Grid>
                     </ViewCell>

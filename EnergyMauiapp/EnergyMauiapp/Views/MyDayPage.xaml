@@ -39,21 +39,32 @@
             </StackLayout>
         </Frame>
 
-
+            <Grid
+                Padding="10"
+                RowDefinitions="Auto, Auto, *"
+                RowSpacing="20"
+                ColumnDefinitions=".50*, .50*"
+                ColumnSpacing="20">
             <Label 
-            Text="Här fyller du i vad du gjort under dagen"
-            FontSize="20"
+                Grid.Column="0"
+                Grid.Row="0"
+            Text="Här lägger du till vad du gjort under dagen"
+            FontSize="16"
             TextColor="DimGray"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
             <Label 
+                Grid.Column="0"
+                Grid.Row="1"
             Text="{Binding TotalBudget, StringFormat='Din dagsbudget för idag är: {0} '}"
-            FontSize="20"
+            FontSize="16"
             TextColor="DimGray"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
             <ListView
+                Grid.Column="0"
+                Grid.Row="2"
             ItemsSource="{Binding ActivityList}"
                 >
             <ListView.ItemTemplate>
@@ -61,23 +72,25 @@
                     <ViewCell>
                         <Grid 
                             Padding="10"
-                            ColumnDefinitions=".25*, .25*, .25*, .25*"
+                            ColumnDefinitions=".33*, .33*, .33*"
                             ColumnSpacing="20">
-                            <Label Grid.Column="1"
+                            <Label Grid.Column="0"
                                    Text="{Binding Name}"
-                                   HorizontalOptions="End"
+                                   TextColor="DimGray"
+                                   HorizontalOptions="Start"
                                    FontSize="14"/>
-                                <Label Grid.Column="2"
+                                <Label Grid.Column="1"
                                    Text="{Binding Points}"
-                                   HorizontalOptions="End"
+                                       TextColor="DimGray"
+                                   HorizontalOptions="Center"
                                    FontSize="14"/>
 
                                 <Button 
-                                    Grid.Column="3"
+                                    Grid.Column="2"
                                     Text="Lägg till"
                                     TextColor="DimGray"
                                     Opacity="0.7"
-                                    HorizontalOptions="Start"
+                                    HorizontalOptions="Center"
                                 Clicked="OnAddBtnClicked"
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MyDayPageViewModel}}, Path=AddCommand}"
                                      CommandParameter="{Binding .}"/>
@@ -88,13 +101,17 @@
         </ListView>
 
         <Label 
-            Text="Här är de aktiviteter du valt. Tryck på ta bort om du ångrar något val. Tryck på spara när du är klar."
-            FontSize="20"
+            Grid.Column="1"
+            Grid.Row="0"
+            Text="Här är de aktiviteter du lagt till&#10;Tryck på ta bort om du ångrar något val"
+            FontSize="16"
             TextColor="DimGray"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
         <ListView
+            Grid.Column="1"
+            Grid.Row="2"
             ItemsSource="{Binding MyDailyActivitiesList}"
                 >
             <ListView.ItemTemplate>
@@ -102,22 +119,24 @@
                     <ViewCell>
                         <Grid 
                             Padding="10"
-                            ColumnDefinitions=".25*, .25*, .25*, .25*"
+                            ColumnDefinitions=".33*, .33*, .33*"
                             ColumnSpacing="20">
-                            <Label Grid.Column="1"
+                            <Label Grid.Column="0"
                                    Text="{Binding Name}"
-                                   HorizontalOptions="End"
+                                   HorizontalOptions="Start"
+                                   TextColor="DimGray"
                                    FontSize="14"/>
-                                <Label Grid.Column="2"
+                                <Label Grid.Column="1"
                                    Text="{Binding Points}"
-                                   HorizontalOptions="End"
+                                   TextColor="DimGray"
+                                   HorizontalOptions="Center"
                                    FontSize="14"/>
                                 <Button 
                                     Grid.Column="2"
                                     Text="Ta bort"
                                     TextColor="DimGray"
                                     Opacity="0.7"
-                                    HorizontalOptions="Start"
+                                    HorizontalOptions="Center"
                                 Clicked="OnDeleteBtnClicked"
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MyDayPageViewModel}}, Path=DeleteCommand}"
                                      CommandParameter="{Binding .}"/>
@@ -126,8 +145,13 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
-
+            </Grid>
+            <Label     
+            Text="Klicka här för att spara dagens aktiviteter&#10;OBS att du inte kan lägga till något mer för denna dag när du sparat!"
+            FontSize="16"
+            TextColor="DimGray"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
             <Button
             Text="Spara dagens aktiviteter"
                 TextColor="DimGray"

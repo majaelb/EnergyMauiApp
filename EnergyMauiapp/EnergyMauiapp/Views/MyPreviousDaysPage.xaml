@@ -40,13 +40,26 @@
             </Frame>
 
             <Label 
-            Text="Här hittar du dina tidigare dagar. Klicka på en dag för att se detaljer"
+            Text="Här hittar du dina tidigare dagar&#10;Klicka på en dag för att se detaljer"
             FontSize="20"
             TextColor="DimGray"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-            
-                  
+            <Grid
+                Padding="10"
+                ColumnDefinitions=".25*, .25*, .25*, .25*"
+                ColumnSpacing="20">  
+                 <Label Grid.Column="1"
+                    Text="Datum"
+                    TextColor="DimGray"
+                    HorizontalOptions="Center"
+                    FontSize="18"/>
+                <Label Grid.Column="2"
+                                   Text="Använda poäng"
+                                   TextColor="DimGray"
+                                   HorizontalOptions="Center"
+                                   FontSize="18"/>
+            </Grid>
             <ListView
             ItemsSource="{Binding MyDailyActivitiesList}"
                 ItemSelected="OnListViewItemSelected">
@@ -56,22 +69,33 @@
                         <Grid 
                             Padding="10"
                             RowDefinitions="Auto, *"
-                            ColumnDefinitions="200, 200, 100"
+                            ColumnDefinitions=".25*, .25*, .25*, .25*"
                             ColumnSpacing="20">
-                            
-                            <Label Grid.Column="1"
+                                
+                                <Label Grid.Column="1"
                                    Text="{Binding Date}"
-                                   FontSize="32"/>
-                            <Label Grid.Row="1"
-                                   Grid.Column="1"
+                                   TextColor="DimGray"
+                                   HorizontalOptions="Center"
+                                   FontSize="16"/>
+                                
+                                <Label 
+                                   Grid.Column="2"
                                    Text="{Binding UsedBudgetPoints}"
-                                   FontSize="15"/>
+                                TextColor="DimGray"
+                                    HorizontalOptions="Center"
+                                   FontSize="16"/>
                          
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </VerticalStackLayout>
+            <Button
+            Text="Tillbaka"
+                TextColor="DimGray"
+                    Opacity="0.7"
+            Clicked="OnBackClicked"
+            HorizontalOptions="Center"/>
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

@@ -39,79 +39,94 @@
             </StackLayout>
         </Frame>
 
-        <Label 
-            Text="Här gör du en ny dagsbudget, lägg till de saker som du orkar göra på en dag utan att vara helt slut på kvällen"
-            FontSize="20"
+            <Grid
+                Padding="10"
+                RowDefinitions="Auto, Auto, *"
+                RowSpacing="20"
+                ColumnDefinitions=".50*, .50*"
+                ColumnSpacing="10">
+                <Label 
+                Grid.Column="0"
+                Grid.Row="0"
+            Text="Här gör du en ny dagsbudget,&#10;lägg till de saker som du orkar göra på en dag&#10;utan att vara helt slut på kvällen"
+            FontSize="16"
             TextColor="DimGray"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
 
-
-        <ListView
-            ItemsSource="{Binding BudgetList}"
+                <ListView
+                Grid.Column="0"
+                Grid.Row="2"
+                ItemsSource="{Binding BudgetList}"
                 >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid 
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid 
                             Padding="10"
-                            ColumnDefinitions=".25*, .25*, .25*, .25*"
+                            ColumnDefinitions=".50*, .50*"
                             ColumnSpacing="20">
-                            <Label Grid.Column="1"
+                                    <Label Grid.Column="0"
                                    Text="{Binding Name}"
-                                   HorizontalOptions="End"
+                                   HorizontalOptions="Center"
+                                           TextColor="DimGray"
                                    FontSize="14"/>
-                            
-                            <Button 
-                                    Grid.Column="2"
+
+                                    <Button 
+                                    Grid.Column="1"
                                     Text="Lägg till"
                                     TextColor="DimGray"
                                     Opacity="0.7"
-                                    HorizontalOptions="Start"
+                                    HorizontalOptions="Center"
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MakeNewDailyBudgetPageViewModel}}, Path=AddCommand}"
                                      CommandParameter="{Binding .}"/>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
-            <Label 
-            Text="Här är de aktiviteter du valt. Tryck på ta bort om du ångrar något val. Tryck på spara när du är klar."
-            FontSize="20"
+                <Label 
+            Grid.Column="1"
+            Grid.Row="0"
+            Text="Här är de aktiviteter du lagt till&#10;Tryck på ta bort om du ångrar något val"
+            FontSize="16"
             TextColor="DimGray"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-            <ListView
+                <ListView
+            Grid.Column="1"
+            Grid.Row="2"
             ItemsSource="{Binding MyBudgetList}"
                 >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid 
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid 
                             Padding="10"
-                            ColumnDefinitions=".25*, .25*, .25*, .25*"
+                            ColumnDefinitions=".50*, .50*"
                             ColumnSpacing="20">
-                            <Label Grid.Column="1"
+                                    <Label Grid.Column="0"
                                    Text="{Binding Name}"
-                                   HorizontalOptions="End"
+                                   HorizontalOptions="Center"
+                                           TextColor="DimGray"
                                    FontSize="14"/>
-                                <Button 
-                                    Grid.Column="2"
+                                    <Button 
+                                    Grid.Column="1"
                                     Text="Ta bort"
                                     TextColor="DimGray"
                                     Opacity="0.7"
-                                    HorizontalOptions="Start"
+                                    HorizontalOptions="Center"
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MakeNewDailyBudgetPageViewModel}}, Path=DeleteCommand}"
                                      CommandParameter="{Binding .}"/>
-                            </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
             <Grid
                 ColumnDefinitions=".25*, .25*, .25*, .25*"
                             ColumnSpacing="20">

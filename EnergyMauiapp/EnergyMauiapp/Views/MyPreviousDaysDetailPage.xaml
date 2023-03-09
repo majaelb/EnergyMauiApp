@@ -23,15 +23,18 @@
             <Label
             Text="{Binding Date}"
             HorizontalOptions="Center"
-            Style="{DynamicResource TitleStyle}"/>
+            FontSize="18"
+            TextColor="DimGray"/>
             <Label
-            Text="{Binding DailyBudget}"
-            FontSize="25"
+            Text="{Binding DailyBudget, StringFormat='Din budget för dagen var: {0} poäng'}"
+            FontSize="16"
+                TextColor="DimGray"
             HorizontalOptions="Center"/>
             <Label
-            Text="{Binding UsedBudgetPoints}"
+            Text="{Binding UsedBudgetPoints, StringFormat='Du använde: {0} poäng'}"
             HorizontalOptions="Center"
-            Style="{DynamicResource SubtitleStyle}"/>
+                TextColor="DimGray"
+            FontSize="16"/>
             <ListView
             ItemsSource="{Binding MyActivities}">
                 <ListView.ItemTemplate>
@@ -39,17 +42,21 @@
                         <ViewCell>
                             <Grid 
                             Padding="10"
-                            RowDefinitions="Auto, *"
-                            ColumnDefinitions="200, 200, 100"
+                            
+                            ColumnDefinitions=".25*, .25*, .25*, .25*"
                             ColumnSpacing="20">
 
                                 <Label Grid.Column="1"
                                    Text="{Binding Name}"
-                                   FontSize="32"/>
-                                <Label Grid.Row="1"
-                                   Grid.Column="1"
+                                   FontSize="16"
+                                       HorizontalOptions="Start"
+                                       TextColor="DimGray"/>
+                                <Label 
+                                   Grid.Column="2"
                                    Text="{Binding Points}"
-                                   FontSize="15"/>
+                                    TextColor="DimGray"
+                                    HorizontalOptions="Center"
+                                   FontSize="16"/>
 
                             </Grid>
                         </ViewCell>
