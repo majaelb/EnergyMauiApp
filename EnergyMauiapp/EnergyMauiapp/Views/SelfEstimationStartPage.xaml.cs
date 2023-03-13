@@ -15,6 +15,8 @@ public partial class SelfEstimationPage : ContentPage
     private async void OnNewSelfEstBtnClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new MakeNewSelfEstimationPage());
+        //await Navigation.PushAsync(new NewSelfEstPage());
+
     }
 
     private async void OnPrevSelfEstBtnClicked(object sender, EventArgs e)

@@ -37,6 +37,7 @@
             </Frame>
 
             <Label 
+                x:Name="Instruction"
             Text="Starta en ny självskattning genom att trycka på knappen nedan"
             FontSize="20"
             TextColor="DimGray"
@@ -45,35 +46,16 @@
             <Label
             x:Name="InfoText"
             HorizontalOptions="Center"/>
-            <Label
-            x:Name="Question"
-            HorizontalOptions="Center"/>
-            <Label
-            x:Name="AnswerOptions"
-            HorizontalOptions="Center"/>
-            <Entry
-            x:Name="Answer"
-            Placeholder="Skriv siffran som motsvarar rätt påstående här"
-            Keyboard="Numeric"
-            IsVisible="False"
-            HorizontalOptions="Center"/>
+     
             <Button
-                x:Name="NextBtn"
+            x:Name="StartBtn"
             Text="Starta skattning"
-                TextColor="DimGray"
-                    Opacity="0.7"
-            Clicked="OnNextBtnClicked"
+            TextColor="DimGray"
+            Opacity="0.7"
+            Clicked="OnStartBtnClicked"
             HorizontalOptions="Center"/>
             
-            <Button
-            x:Name="ResultBtn"
-            Text="Resultat"
-            HorizontalOptions="Center"
-            IsVisible="False"
-            Clicked="OnResultBtnClicked"/>
-            <Label
-                x:Name="Result"
-                HorizontalOptions="Center"/>
+            
             <Button
             Text="Tillbaka"
                 TextColor="DimGray"

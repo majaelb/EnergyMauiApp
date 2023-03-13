@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EnergyMauiapp</name>
+    </assembly>
+    <members>
+        <member name="P:EnergyMauiapp.ViewModels.CurrentDailyBudgetPageViewModel.Tips">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.CurrentDailyBudgetPageViewModel.tips"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.CurrentDailyBudgetPageViewModel.Name">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.CurrentDailyBudgetPageViewModel.name"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.CurrentDailyBudgetPageViewModel.TotalBudget">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.CurrentDailyBudgetPageViewModel.totalBudget"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.CurrentDailyBudgetPageViewModel.MyChosenActivities">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.CurrentDailyBudgetPageViewModel.myChosenActivities"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.DailyBudgetStartPageViewModel.Tips">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.DailyBudgetStartPageViewModel.tips"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.FactsAndLinksPageViewModel.Tips">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.FactsAndLinksPageViewModel.tips"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MainPageViewModel.Tips">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MainPageViewModel.tips"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.Tips">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.tips"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.Name">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.name"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.Points">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.points"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.BudgetList">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.budgetList"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.MyBudgetList">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.myBudgetList"/>
+        </member>
+        <member name="F:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.addCommand">
+            <summary>The backing field for <see cref="P:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.AddCommand"/>.</summary>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.AddCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.Add(System.Object)"/>.</summary>
+        </member>
+        <member name="F:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.deleteCommand">
+            <summary>The backing field for <see cref="P:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.DeleteCommand"/>.</summary>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.DeleteCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.Delete(System.Object)"/>.</summary>
+        </member>
+        <member name="F:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.saveCommand">
+            <summary>The backing field for <see cref="P:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.SaveCommand"/>.</summary>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.SaveCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:EnergyMauiapp.ViewModels.MakeNewDailyBudgetPageViewModel.Save"/>.</summary>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MakeNewSelfEstimationPageViewModel.Tips">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MakeNewSelfEstimationPageViewModel.tips"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyDayPageViewModel.Tips">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MyDayPageViewModel.tips"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyDayPageViewModel.Name">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MyDayPageViewModel.name"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyDayPageViewModel.Points">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MyDayPageViewModel.points"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyDayPageViewModel.TotalBudget">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MyDayPageViewModel.totalBudget"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyDayPageViewModel.ActivityList">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MyDayPageViewModel.activityList"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyDayPageViewModel.MyDailyActivitiesList">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MyDayPageViewModel.myDailyActivitiesList"/>
+        </member>
+        <member name="F:EnergyMauiapp.ViewModels.MyDayPageViewModel.addCommand">
+            <summary>The backing field for <see cref="P:EnergyMauiapp.ViewModels.MyDayPageViewModel.AddCommand"/>.</summary>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyDayPageViewModel.AddCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:EnergyMauiapp.ViewModels.MyDayPageViewModel.Add(System.Object)"/>.</summary>
+        </member>
+        <member name="F:EnergyMauiapp.ViewModels.MyDayPageViewModel.deleteCommand">
+            <summary>The backing field for <see cref="P:EnergyMauiapp.ViewModels.MyDayPageViewModel.DeleteCommand"/>.</summary>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyDayPageViewModel.DeleteCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:EnergyMauiapp.ViewModels.MyDayPageViewModel.Delete(System.Object)"/>.</summary>
+        </member>
+        <member name="F:EnergyMauiapp.ViewModels.MyDayPageViewModel.saveCommand">
+            <summary>The backing field for <see cref="P:EnergyMauiapp.ViewModels.MyDayPageViewModel.SaveCommand"/>.</summary>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyDayPageViewModel.SaveCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:EnergyMauiapp.ViewModels.MyDayPageViewModel.Save"/>.</summary>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyDayStartPageViewModel.Tips">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MyDayStartPageViewModel.tips"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.MyDailyActivitiesList">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.myDailyActivitiesList"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.Date">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.date"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.DailyBudget">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.dailyBudget"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.UsedBudgetPoints">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.usedBudgetPoints"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.MyActivities">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.myActivities"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.Name">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.name"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.Points">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.points"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.Tips">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.tips"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.Header">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.MyPreviousDaysPageViewModel.header"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.PreviousSelfEstimationPageViewModel.Tips">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.PreviousSelfEstimationPageViewModel.tips"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.SelfEstimationViewModel.Tips">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.SelfEstimationViewModel.tips"/>
+        </member>
+        <member name="P:EnergyMauiapp.ViewModels.YouTubePageViewModel.Tips">
+            <inheritdoc cref="F:EnergyMauiapp.ViewModels.YouTubePageViewModel.tips"/>
+        </member>
+    </members>
+</doc>

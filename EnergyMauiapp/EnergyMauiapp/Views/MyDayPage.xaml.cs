@@ -13,13 +13,15 @@ public partial class MyDayPage : ContentPage
     }
 
 
-    protected override void OnAppearing()
+    protected async override void OnAppearing()
     {
         //Try catch så det inte kraschar om man inte lagt till någon aktivitet ännu
         try
         {
             base.OnAppearing();
-            Task t = (BindingContext as MyDayPageViewModel).GetSavedActivities();
+            //Task t = (BindingContext as MyDayPageViewModel).GetSavedActivities();
+            await (BindingContext as MyDayPageViewModel).GetSavedActivities();
+
         }
         catch (Exception)
         {

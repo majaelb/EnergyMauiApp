@@ -1,0 +1,113 @@
+is_global = true
+build_property.TargetFramework = net7.0-windows10.0.19041.0
+build_property.TargetPlatformMinVersion = 10.0.17763.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 9A19103F-16F7-4668-BE54-9A1E7A4F7556
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = EnergyMauiapp
+build_property.ProjectDir = C:\Users\majal\OneDrive\Dokument\System22\Mauiapp\MyEnergyMauiApp\EnergyMauiapp\EnergyMauiapp\
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Views/CurrentDailyBudgetPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Views.CurrentDailyBudgetPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CurrentDailyBudgetPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CurrentDailyBudgetPage.xaml
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Views/DailyBudgetStartPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Views.DailyBudgetStartPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\DailyBudgetStartPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\DailyBudgetStartPage.xaml
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Views/FactsAndLinksPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Views.FactsAndLinksPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\FactsAndLinksPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\FactsAndLinksPage.xaml
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Views/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Views.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MainPage.xaml
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Views/MakeNewDailyBudgetPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Views.MakeNewDailyBudgetPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MakeNewDailyBudgetPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MakeNewDailyBudgetPage.xaml
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Views/MakeNewSelfEstimationPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Views.MakeNewSelfEstimationPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MakeNewSelfEstimationPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MakeNewSelfEstimationPage.xaml
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Views/MyDayPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Views.MyDayPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MyDayPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MyDayPage.xaml
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Views/MyDayStartPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Views.MyDayStartPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MyDayStartPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MyDayStartPage.xaml
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Views/MyPreviousDaysDetailPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Views.MyPreviousDaysDetailPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MyPreviousDaysDetailPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MyPreviousDaysDetailPage.xaml
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Views/MyPreviousDaysPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Views.MyPreviousDaysPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MyPreviousDaysPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MyPreviousDaysPage.xaml
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Views/PreviousSelfEstimationsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Views.PreviousSelfEstimationsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\PreviousSelfEstimationsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\PreviousSelfEstimationsPage.xaml
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Views/SelfEstimationStartPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Views.SelfEstimationStartPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\SelfEstimationStartPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\SelfEstimationStartPage.xaml
+
+[C:/Users/majal/OneDrive/Dokument/System22/Mauiapp/MyEnergyMauiApp/EnergyMauiapp/EnergyMauiapp/Views/YouTubePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = EnergyMauiapp.Views.YouTubePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\YouTubePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\YouTubePage.xaml

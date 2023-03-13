@@ -38,6 +38,8 @@ namespace EnergyMauiapp.ViewModels
 
         public Header Header { get; set; }
 
+
+        //TODO: Poäng man gjort av med under dagen visas ovanför valda aktiviteter
         public MyDayPageViewModel()
         {
             string fileName = "MyDailyBudget.txt";

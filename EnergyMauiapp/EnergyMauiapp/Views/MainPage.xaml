@@ -40,8 +40,9 @@
         <Button
         x:Name="MyDayBtn"
         Text="Min dag"
+            BackgroundColor="White"
             TextColor="DimGray"
-                    Opacity="0.7"
+                    Opacity="0.5"
         HorizontalOptions="Center"
         Clicked="OnMyDayBtnClicked"/>
         <Button
