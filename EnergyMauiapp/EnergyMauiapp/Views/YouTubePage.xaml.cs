@@ -10,7 +10,6 @@ namespace EnergyMauiapp.Views;
 
 public partial class YouTubePage : ContentPage
 {
-    //TODO: Refaktorera koden
     YouTubePageViewModel vm = new();
 
     public YouTubePage()
@@ -24,7 +23,7 @@ public partial class YouTubePage : ContentPage
         {
             ApiKey = "AIzaSyCDRz0y5NHzkhHaD6zxlNXa7beiK0lJ_ww"
         });
-
+        //Gör en sökning på youtube, olika sökning beroende på vilken knapp man tryckt på
         var searchListRequest = service.Search.List("snippet");
         if (sender == StressButton)
             searchListRequest.Q = "Meditation " + StressButton.Text;
@@ -38,18 +37,14 @@ public partial class YouTubePage : ContentPage
 
         var results = await searchListRequest.ExecuteAsync();
 
-        //TODO: Listview/collectionview för att visa mediaelements?
-
         YoutubeClient youtube = new();
 
+        //Hämtar ut rätt url-source mha video-id från sökningen, rätt url används sedan i xaml-koden
         //Video1
         StreamManifest streamManifest0 = await youtube.Videos.Streams.GetManifestAsync("https://www.youtube.com/watch?v=" + results.Items[0].Id.VideoId);
         IVideoStreamInfo streamInfo0 = streamManifest0.GetMuxedStreams().GetWithHighestVideoQuality();
         if (streamInfo0 != null)
         {
-            // Get the actual stream
-            Stream stream = await youtube.Videos.Streams.GetAsync(streamInfo0);
-
             mediaElement0.Source = streamInfo0.Url;
         }
 
@@ -58,9 +53,6 @@ public partial class YouTubePage : ContentPage
         IVideoStreamInfo streamInfo1 = streamManifest1.GetMuxedStreams().GetWithHighestVideoQuality();
         if (streamInfo1 != null)
         {
-            // Get the actual stream
-            Stream stream = await youtube.Videos.Streams.GetAsync(streamInfo1);
-
             mediaElement1.Source = streamInfo1.Url;
         }
 
@@ -69,14 +61,8 @@ public partial class YouTubePage : ContentPage
         IVideoStreamInfo streamInfo2 = streamManifest2.GetMuxedStreams().GetWithHighestVideoQuality();
         if (streamInfo1 != null)
         {
-            // Get the actual stream
-            Stream stream = await youtube.Videos.Streams.GetAsync(streamInfo2);
-
             mediaElement2.Source = streamInfo2.Url;
         }
-
-
-
     }
     private async void OnBackClicked(object sender, EventArgs e)
     {

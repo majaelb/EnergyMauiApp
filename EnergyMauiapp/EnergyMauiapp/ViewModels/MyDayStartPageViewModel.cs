@@ -21,7 +21,7 @@ namespace EnergyMauiapp.ViewModels
             Tips = ListManager.AddOneRandomTips();
             Header = new Header()
             {
-                Title = "Energiappen",
+                Title = "Min dag",
                 HeaderImageSource = "flowersheader.jpg"
             };
         }

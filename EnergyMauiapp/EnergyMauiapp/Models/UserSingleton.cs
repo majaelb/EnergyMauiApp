@@ -9,6 +9,7 @@ namespace EnergyMauiapp.Models
     internal class UserSingleton
     {
         public int MyBudget = 0;
+
         public double EstResult = 0;
 
         private static readonly UserSingleton _instance = new();

@@ -6,7 +6,7 @@ namespace EnergyMauiapp.Views;
 
 public partial class MyDayStartPage : ContentPage
 {
-    DailyBudgetStartPageViewModel vm = new();
+    MyDayPageViewModel vm = new();
 
     public MyDayStartPage()
     {
@@ -51,6 +51,6 @@ public partial class MyDayStartPage : ContentPage
 
     private async void OnBackClicked(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        await Navigation.PushAsync(new MainPage());
     }
 }

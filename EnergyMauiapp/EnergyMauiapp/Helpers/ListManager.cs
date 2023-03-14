@@ -62,9 +62,9 @@ namespace EnergyMauiapp.Helpers
             return budgetList;
         }
 
-        public static ObservableCollection<SelfEstTest> MakeQuestionList()
+        public static List<SelfEstTest> MakeQuestionList()
         {
-            ObservableCollection<SelfEstTest> questionsAndOptions = new()
+            List<SelfEstTest> questionsAndOptions = new()
             {
                 new SelfEstTest
                 {

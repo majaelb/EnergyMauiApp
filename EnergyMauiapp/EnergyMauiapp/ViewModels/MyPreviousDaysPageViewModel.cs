@@ -25,7 +25,7 @@ namespace EnergyMauiapp.ViewModels
         int usedBudgetPoints;
 
         [ObservableProperty]
-        ObservableCollection<Budget> myActivities; //Lista med sparade aktiviteter per dag
+        ObservableCollection<Budget> myActivities; //Lista med sparade aktiviteter per dag (detaljerad vy)
 
         [ObservableProperty] //Hör ihop med listan ovan
         string name;
@@ -42,12 +42,14 @@ namespace EnergyMauiapp.ViewModels
 
         public MyPreviousDaysPageViewModel()
         {
-            
             var task = Task.Run(() => GetSavedActivities());
             task.Wait();
 
-            MyDailyActivitiesList = task.Result;
-
+            MyDailyActivitiesList = new ObservableCollection<DailyEvent>();
+            foreach (var activity in task.Result.AsEnumerable().OrderByDescending(x => x.Date)) 
+            {
+                MyDailyActivitiesList.Add(activity);
+            }
 
             Tips = ListManager.AddOneRandomTips();
             Header = new Header()
@@ -61,11 +63,7 @@ namespace EnergyMauiapp.ViewModels
         {
             string fileName = "DatePointsAndActivity.txt";
             ObservableCollection<DailyEvent> activitiesFromTxt = await FileManager.GetObjectFromTxt<ObservableCollection<DailyEvent>>(fileName);
-
             return activitiesFromTxt;
-        }
-
+        }  
     }
-
-
 }

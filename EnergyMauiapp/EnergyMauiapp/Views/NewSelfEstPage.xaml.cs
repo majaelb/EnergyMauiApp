@@ -1,6 +1,7 @@
 using EnergyMauiapp.Helpers;
 using EnergyMauiapp.Models;
 using EnergyMauiapp.ViewModels;
+using Microsoft.Maui.Storage;
 using System.Collections.ObjectModel;
 using System.Text.Json;
 
@@ -14,28 +15,27 @@ public partial class NewSelfEstPage : ContentPage
 
     int questionCount = 0;
 
-   // public List<SelfEstTest> SelfEstTest = ListManager.MakeQuestionList();
-
-    public ObservableCollection<SelfEstTest> SelfEstTest = ListManager.MakeQuestionList();
+    public List<SelfEstTest> SelfEstTest = ListManager.MakeQuestionList();
 
     public NewSelfEstPage()
     {
         InitializeComponent();
-        BindingContext = vm;  
+        BindingContext = vm;
         Question.Text = SelfEstTest[0].Question;
         AnswerOptions.Text = SelfEstTest[0].AnswerOptions;
     }
 
     private async void OnNextBtnClicked(object sender, EventArgs e)
     {
-        if (questionCount > SelfEstTest.Count -2)
+        if (questionCount > SelfEstTest.Count - 3)
         {
             NextBtn.IsVisible = false;
             ResultBtn.IsVisible = true;
         }
 
-        bool isValidAnswer = InputManager.RegexCheck("^(0|0,5|1|1,5|2|2,5|3)$", Answer.Text);
+        Answer.Text ??= "";
 
+        bool isValidAnswer = InputManager.RegexCheck("^(0|0,5|1|1,5|2|2,5|3)$", Answer.Text);
         if (isValidAnswer)
         {
             user.EstResult += Convert.ToDouble(Answer.Text);
@@ -51,9 +51,8 @@ public partial class NewSelfEstPage : ContentPage
             Question.Text = SelfEstTest[questionCount].Question;
             AnswerOptions.Text = SelfEstTest[questionCount].AnswerOptions;
         }
-        Result.Text = "Ditt resultat: " + user.EstResult.ToString();
         Answer.Text = string.Empty; //Nollställer textrutan mellan varje inmatning
-                                    // questionCount++;
+        Result.Text = "Ditt resultat: " + user.EstResult.ToString();
     }
 
     private async void OnResultBtnClicked(object sender, EventArgs e)
@@ -62,24 +61,25 @@ public partial class NewSelfEstPage : ContentPage
 
         if (isValidAnswer)
         {
-            User.EstResult += Convert.ToDouble(Answer.Text);
-            User.DateAndEstimationResult.Add(DateTime.Now, User.EstResult); //Ska denna ligga i if-satsen?
+            user.EstResult += Convert.ToDouble(Answer.Text);
 
-            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Skattningsresultaten.txt");//address
-            if (!File.Exists(fileName))
+            Dictionary<DateTime, double> result = new()
             {
-                string jsonString = JsonSerializer.Serialize(User.DateAndEstimationResult);
-                File.WriteAllText(fileName, jsonString);
+                { DateTime.Now, user.EstResult }
+            };
+            string fileName = "Skattningsresultaten.txt";
+            string path = FileManager.GetFilePath(fileName);
+            if (!File.Exists(path))
+            {
+                FileManager.WriteObjectToFile(path, result);
             }
             else
             {
-                string text = File.ReadAllText(fileName);
-                var dictionary = JsonSerializer.Deserialize<Dictionary<DateTime, double>>(text);
-                dictionary.Add(DateTime.Now, User.EstResult);
-                string jsonString = JsonSerializer.Serialize(dictionary);
-                File.WriteAllText(fileName, jsonString);
+                var dictionary = await FileManager.GetObjectFromTxt<Dictionary<DateTime, double>>(fileName);
+                dictionary.Add(DateTime.Now, user.EstResult);
+                FileManager.WriteObjectToFile(fileName, dictionary);
             }
-            User.EstResult = 0;
+            user.EstResult = 0;
             await DisplayAlert("Klart", "Resultatet är sparat", "OK");
             await Navigation.PushAsync(new PreviousSelfEstimationsPage());
         }

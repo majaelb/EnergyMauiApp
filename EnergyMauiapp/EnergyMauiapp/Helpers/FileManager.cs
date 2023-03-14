@@ -35,6 +35,16 @@ namespace EnergyMauiapp.Helpers
             await File.WriteAllTextAsync(path, jsonString);
         }
 
-        
+
+        public static T GetObjectFromTxtNotAsync<T>(string fileName)
+        {
+            string path = GetFilePath(fileName);
+            string json =  File.ReadAllText(path);
+            T obj = JsonSerializer.Deserialize<T>(json);
+
+            return obj;
+        }
+
+
     }
 }

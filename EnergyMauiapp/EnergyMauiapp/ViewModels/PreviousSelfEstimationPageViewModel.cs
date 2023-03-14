@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using static System.Net.Mime.MediaTypeNames;
 using CommunityToolkit.Mvvm.ComponentModel;
+using EnergyMauiapp.Helpers;
 
 namespace EnergyMauiapp.ViewModels
 {
@@ -17,14 +18,21 @@ namespace EnergyMauiapp.ViewModels
 
         public Header Header { get; set; }
         public Dictionary<DateTime, double> SelfEstimationResults { get; set; }
-        //public List<SelfEstimation> SelfEstimations { get; set; }
 
         public PreviousSelfEstimationPageViewModel()
         {
-            string json = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Skattningsresultaten.txt"));
-            SelfEstimationResults = JsonSerializer.Deserialize<Dictionary<DateTime, double>>(json);
-            //SelfEstimations = JsonSerializer.Deserialize<List<SelfEstimation>>(json);
-            //TODO: Ändra till klass med lista att serialisera?
+            string fileName = "Skattningsresultaten.txt";
+            var selfEstResults = Task.Run(() => FileManager.GetObjectFromTxt<Dictionary<DateTime, double>>(fileName));
+            selfEstResults.Wait();
+            SelfEstimationResults = selfEstResults.Result;
+            //foreach (KeyValuePair<DateTime, double> kvp in selfEstResults.Result.OrderByDescending(kvp => kvp.Key))
+            //{
+            //    SelfEstimationResults.Add(kvp.Key, kvp.Value);
+            //}
+
+            //SelfEstimationResults = (KeyValuePair<DateTime, double>)selfEstResults.Result.AsEnumerable().OrderByDescending(p => p.Key);
+            //TODO: Hur sortera resultaten?
+            
             Tips = Helpers.ListManager.AddOneRandomTips();
 
             Header = new Header()

@@ -9,9 +9,7 @@ namespace EnergyMauiapp.Models
     public class SelfEstTest
     {
         public  string Question { get; set; }
-        public  string AnswerOptions { get; set; }
-
-       
+        public  string AnswerOptions { get; set; }       
     }
 
 

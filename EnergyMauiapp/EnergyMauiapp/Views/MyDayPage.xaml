@@ -52,7 +52,7 @@
             FontSize="16"
             TextColor="DimGray"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Start" />
             <Label 
                 Grid.Column="0"
                 Grid.Row="1"
@@ -60,7 +60,7 @@
             FontSize="16"
             TextColor="DimGray"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Start" />
 
             <ListView
                 Grid.Column="0"
@@ -107,7 +107,15 @@
             FontSize="16"
             TextColor="DimGray"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Start" />
+                <Label 
+                Grid.Column="1"
+                Grid.Row="1"
+            Text="{Binding UsedPoints, StringFormat='Du har använt: {0} poäng'}"
+            FontSize="16"
+            TextColor="DimGray"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" />
 
         <ListView
             Grid.Column="1"

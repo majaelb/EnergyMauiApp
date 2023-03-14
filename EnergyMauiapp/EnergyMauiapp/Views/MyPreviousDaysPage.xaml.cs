@@ -6,19 +6,18 @@ namespace EnergyMauiapp.Views;
 
 public partial class MyPreviousDaysPage : ContentPage
 {
-    ViewModels.MyPreviousDaysPageViewModel vm = new();
-
-
+    MyPreviousDaysPageViewModel vm = new();
 
     public MyPreviousDaysPage()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
         BindingContext = vm;
-	}
+    }
 
     private async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
-        //Om vi klickat på en av produkterna händer detta
+        //TODO: Kunna klicka på resultatet flera gånger i rad
+        //Om vi klickat på en av dagarna händer detta
         DailyEvent dailyEvent = ((ListView)sender).SelectedItem as DailyEvent;
 
         if (dailyEvent != null)
@@ -31,10 +30,9 @@ public partial class MyPreviousDaysPage : ContentPage
         }
     }
 
-    //TODO: Kunna klicka på resultatet flera gånger i rad
     private async void OnBackClicked(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        await Navigation.PushAsync(new MyDayStartPage());
     }
 
 

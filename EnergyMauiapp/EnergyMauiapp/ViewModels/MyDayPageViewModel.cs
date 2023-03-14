@@ -31,6 +31,9 @@ namespace EnergyMauiapp.ViewModels
         int totalBudget;
 
         [ObservableProperty]
+        int usedPoints;
+
+        [ObservableProperty]
         ObservableCollection<Budget> activityList; //Visar hela listan med valbara aktiviteter
 
         [ObservableProperty]
@@ -39,7 +42,6 @@ namespace EnergyMauiapp.ViewModels
         public Header Header { get; set; }
 
 
-        //TODO: Poäng man gjort av med under dagen visas ovanför valda aktiviteter
         public MyDayPageViewModel()
         {
             string fileName = "MyDailyBudget.txt";
@@ -49,6 +51,10 @@ namespace EnergyMauiapp.ViewModels
             var diff = Task.Run(CountTodaysBudget);
             diff.Wait();
             TotalBudget = dailyBudget.Result.TotalDailyBudget - diff.Result;
+
+            var usedPoints = Task.Run(() => CountUsedPoints());
+            usedPoints.Wait();
+            UsedPoints = usedPoints.Result;
 
             ActivityList = ListManager.MakeBudgetList();
 
@@ -61,6 +67,15 @@ namespace EnergyMauiapp.ViewModels
                 HeaderImageSource = "flowersheader.jpg"
             };
         }
+
+        public static async Task<int> CountUsedPoints()
+        {
+            string fileName = "Activities.txt";
+            List<Budget> activitiesFromTxt = await FileManager.GetObjectFromTxt<List<Budget>>(fileName);
+            int usedPoints = activitiesFromTxt.Sum(x => x.Points);
+            return usedPoints;
+        }
+
 
         //TODO: Button för "har du sovit dåligt eller är sjuk?" som också drar av x antal poäng
         public static async Task<int> CountTodaysBudget()
@@ -91,10 +106,18 @@ namespace EnergyMauiapp.ViewModels
         }
    
         //Visas OnAppearing 
-        public async Task GetSavedActivities()
+        //public async Task GetSavedActivities()
+        //{
+        //    string fileName = "Activities.txt";
+        //    List<Budget> activitiesFromTxt = await FileManager.GetObjectFromTxt<List<Budget>>(fileName);
+        //    activitiesFromTxt.ForEach(MyDailyActivitiesList.Add);
+        //}
+
+        //Kör den icke-asynkrona metoden för att komma bort från problemet att första posten i listan dupliceras
+        public void GetSavedActivitiesNotAsync()
         {
             string fileName = "Activities.txt";
-            List<Budget> activitiesFromTxt = await FileManager.GetObjectFromTxt<List<Budget>>(fileName);
+            List<Budget> activitiesFromTxt =  FileManager.GetObjectFromTxtNotAsync<List<Budget>>(fileName);
             activitiesFromTxt.ForEach(MyDailyActivitiesList.Add);
         }
 
@@ -121,6 +144,7 @@ namespace EnergyMauiapp.ViewModels
                 FileManager.WriteObjectToFile(fileName, dailyActivities);
             }
             MyDailyActivitiesList.Add(budget);
+            UsedPoints += budget.Points;
         }
 
         [RelayCommand]
@@ -135,6 +159,7 @@ namespace EnergyMauiapp.ViewModels
             dailyActivities.RemoveAt(removeIndex);
             FileManager.WriteObjectToFile(fileName, dailyActivities);
             MyDailyActivitiesList.Remove(budget);
+            UsedPoints -= budget.Points;
         }
 
         //TODO: Facade: Save daily event? 

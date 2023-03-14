@@ -45,6 +45,8 @@
             HorizontalOptions="Center" />
             <Label
             x:Name="InfoText"
+                                            TextColor="DimGray"
+
             HorizontalOptions="Center"/>
      
             <Button

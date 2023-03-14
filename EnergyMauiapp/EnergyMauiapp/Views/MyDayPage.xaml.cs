@@ -13,14 +13,31 @@ public partial class MyDayPage : ContentPage
     }
 
 
-    protected async override void OnAppearing()
+    //protected async override void OnAppearing()
+    //{
+    //    //Try catch så det inte kraschar om man inte lagt till någon aktivitet ännu
+    //        base.OnAppearing();
+    //    try
+    //    {
+    //        //Task t = (BindingContext as MyDayPageViewModel).GetSavedActivities();
+    //        await (BindingContext as MyDayPageViewModel).GetSavedActivities();
+
+    //    }
+    //    catch (Exception)
+    //    {
+
+    //    }
+    //}
+
+    //OnAppearing körs inte asynkront, då dupliceras inte första posten i listan..
+    protected override void OnAppearing()
     {
         //Try catch så det inte kraschar om man inte lagt till någon aktivitet ännu
+        base.OnAppearing();
         try
         {
-            base.OnAppearing();
             //Task t = (BindingContext as MyDayPageViewModel).GetSavedActivities();
-            await (BindingContext as MyDayPageViewModel).GetSavedActivities();
+            (BindingContext as MyDayPageViewModel).GetSavedActivitiesNotAsync();
 
         }
         catch (Exception)
@@ -28,6 +45,7 @@ public partial class MyDayPage : ContentPage
 
         }
     }
+
 
     private async void OnAddBtnClicked(object sender, EventArgs e)
     {
