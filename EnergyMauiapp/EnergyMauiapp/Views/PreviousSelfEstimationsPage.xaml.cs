@@ -17,7 +17,6 @@ public partial class PreviousSelfEstimationsPage : ContentPage
         Middle.Text = "Måttlig mental trötthet (15-20)";
         High.Text = "Svår mental trötthet (20,5 & högre)";
         //TODO: Koppla resultatens färg till resultat?
-        //TODO: Lägg till ta bort-knapp på resultaten
     }
 
     private async void OnBackClicked(object sender, EventArgs e)

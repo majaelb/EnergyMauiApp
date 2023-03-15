@@ -1,3 +1,4 @@
+using EnergyMauiapp.Helpers;
 using EnergyMauiapp.Models;
 using EnergyMauiapp.ViewModels;
 using System.Text.Json;
@@ -25,19 +26,14 @@ public partial class DailyBudgetPage : ContentPage
 
     private async void OnCurrentBudgetBtnClicked(object sender, EventArgs e)
     {
-        DailyBudget dailyBudget = null;
-        try
-        {
-            string json = File.ReadAllText(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MyDailyBudget.txt"));
-            dailyBudget = JsonSerializer.Deserialize<DailyBudget>(json);
-        }
-        catch (Exception)
-        {
-            await DisplayAlert("Error", "Du måste göra en dagsbudget först!", "OK");
-        }
-        if (dailyBudget != null)
+        bool existingFile = FileManager.FindExistingFile("MyDailyBudget.txt");
+        if (existingFile)
         {
             await Navigation.PushAsync(new CurrentDailyBudgetPage());
+        }
+        else
+        {
+            await DisplayAlert("Error", "Du måste göra en dagsbudget först!", "OK");
         }
     }
 

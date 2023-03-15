@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EnergyMauiapp.Views.PreviousSelfEstimationsPage"
+             xmlns:viewmodel ="clr-namespace:EnergyMauiapp.ViewModels"
+             x:DataType="viewmodel:PreviousSelfEstimationPageViewModel"
              Title="{Binding Header.Title}"
              BackgroundColor="LightGray">
     <ScrollView>
@@ -45,7 +47,7 @@
 
         <Label
             x:Name="None"
-            TextColor="MediumSpringGreen"
+            TextColor="MediumSeaGreen"
             HorizontalOptions="Center"
             VerticalOptions="Center"
             />
@@ -68,7 +70,7 @@
             VerticalOptions="Center"
             />
 
-        <ListView
+        <!--<ListView
             ItemsSource="{Binding SelfEstimationResults}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -93,9 +95,61 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+        </ListView>-->
 
-        <Button
+            <ListView
+            ItemsSource="{Binding SelfEstimations}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid 
+                            Padding="10"
+                            RowDefinitions="Auto, *, *"
+                            ColumnDefinitions="*, Auto, *"
+                            RowSpacing="10"
+                            ColumnSpacing="20">
+                                <Label 
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                Text="{Binding Date}"
+                                TextColor="DimGray"
+                                    FontSize="18"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+                                <Label 
+                                Grid.Row="1" 
+                                    Grid.Column="1"
+
+                                Text="{Binding Result}"
+                                TextColor="{Binding Color}"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+                                <Label 
+                                Grid.Row="2"     
+                                    Grid.Column="1"
+                                Text="{Binding Text}"
+                                TextColor="{Binding Color}"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+                                <Button 
+                                    Grid.Row="1"
+                                    Grid.Column="2"
+                                    Text="Ta bort"
+                                    TextColor="DimGray"
+                                    Opacity="0.7"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PreviousSelfEstimationPageViewModel}}, Path=DeleteCommand}"
+                                     CommandParameter="{Binding .}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <!--TextColor="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PreviousSelfEstimationPageViewModel}},Path=Col}"-->
+
+            <Button
             Text="Tillbaka"
                 TextColor="DimGray"
                     Opacity="0.7"

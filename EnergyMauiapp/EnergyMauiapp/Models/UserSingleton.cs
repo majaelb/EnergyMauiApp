@@ -18,7 +18,5 @@ namespace EnergyMauiapp.Models
         {
             return _instance;
         }
-
-
     }
 }

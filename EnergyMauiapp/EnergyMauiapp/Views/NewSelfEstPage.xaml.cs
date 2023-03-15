@@ -63,25 +63,54 @@ public partial class NewSelfEstPage : ContentPage
         {
             user.EstResult += Convert.ToDouble(Answer.Text);
 
-            Dictionary<DateTime, double> result = new()
+            string text = InputManager.GetTextResult(user.EstResult);
+            Color color = InputManager.GetColor(user.EstResult);
+            //uint hexcolor = color.ToUint();
+            SelfEstimation selfEst = new() { Date = DateTime.Now, Result = user.EstResult, Text = text, Color = color };
+            var selfEstimations = new List<SelfEstimation>
             {
-                { DateTime.Now, user.EstResult }
+                selfEst
             };
-            string fileName = "Skattningsresultaten.txt";
+            string fileName = "testmedsystem.txt";
+
+            //string fileName = "SkattningsresultatMedFarg.txt";
             string path = FileManager.GetFilePath(fileName);
             if (!File.Exists(path))
             {
-                FileManager.WriteObjectToFile(path, result);
+                FileManager.WriteObjectToFile(path, selfEstimations);
             }
             else
             {
-                var dictionary = await FileManager.GetObjectFromTxt<Dictionary<DateTime, double>>(fileName);
-                dictionary.Add(DateTime.Now, user.EstResult);
-                FileManager.WriteObjectToFile(fileName, dictionary);
+                List<SelfEstimation> selfEstResults = await FileManager.GetObjectFromTxt<List<SelfEstimation>>(path);
+                selfEstResults.Add(selfEst);
+                FileManager.WriteObjectToFile(path, selfEstResults);
             }
             user.EstResult = 0;
             await DisplayAlert("Klart", "Resultatet är sparat", "OK");
             await Navigation.PushAsync(new PreviousSelfEstimationsPage());
+
+
+
+
+            //Dictionary<DateTime, double> result = new()
+            //{
+            //    { DateTime.Now, user.EstResult }
+            //};
+            //string fileName = "Skattningsresultaten.txt";
+            //string path = FileManager.GetFilePath(fileName);
+            //if (!File.Exists(path))
+            //{
+            //    FileManager.WriteObjectToFile(path, result);
+            //}
+            //else
+            //{
+            //    var dictionary = await FileManager.GetObjectFromTxt<Dictionary<DateTime, double>>(fileName);
+            //    dictionary.Add(DateTime.Now, user.EstResult);
+            //    FileManager.WriteObjectToFile(fileName, dictionary);
+            //}
+            //user.EstResult = 0;
+            //await DisplayAlert("Klart", "Resultatet är sparat", "OK");
+            //await Navigation.PushAsync(new PreviousSelfEstimationsPage());
         }
         else
         {

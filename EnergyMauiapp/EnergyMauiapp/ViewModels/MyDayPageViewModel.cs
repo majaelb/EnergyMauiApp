@@ -71,9 +71,18 @@ namespace EnergyMauiapp.ViewModels
         public static async Task<int> CountUsedPoints()
         {
             string fileName = "Activities.txt";
-            List<Budget> activitiesFromTxt = await FileManager.GetObjectFromTxt<List<Budget>>(fileName);
-            int usedPoints = activitiesFromTxt.Sum(x => x.Points);
-            return usedPoints;
+            bool existingFile = FileManager.FindExistingFile(fileName);
+
+            if (existingFile)
+            {
+                List<Budget> activitiesFromxTxt = await FileManager.GetObjectFromTxt<List<Budget>>(fileName);
+                int usedPoints = activitiesFromxTxt.Sum(x => x.Points);
+                return usedPoints;
+            }
+            else
+            {
+                return 0;
+            }
         }
 
 
@@ -104,7 +113,7 @@ namespace EnergyMauiapp.ViewModels
                 return 0;
             }
         }
-   
+
         //Visas OnAppearing 
         //public async Task GetSavedActivities()
         //{
@@ -117,7 +126,7 @@ namespace EnergyMauiapp.ViewModels
         public void GetSavedActivitiesNotAsync()
         {
             string fileName = "Activities.txt";
-            List<Budget> activitiesFromTxt =  FileManager.GetObjectFromTxtNotAsync<List<Budget>>(fileName);
+            List<Budget> activitiesFromTxt = FileManager.GetObjectFromTxtNotAsync<List<Budget>>(fileName);
             activitiesFromTxt.ForEach(MyDailyActivitiesList.Add);
         }
 
@@ -148,7 +157,7 @@ namespace EnergyMauiapp.ViewModels
         }
 
         [RelayCommand]
-        public  async void Delete(object b)
+        public async void Delete(object b)
         {
             var budget = (Budget)b;
 
@@ -160,67 +169,26 @@ namespace EnergyMauiapp.ViewModels
             FileManager.WriteObjectToFile(fileName, dailyActivities);
             MyDailyActivitiesList.Remove(budget);
             UsedPoints -= budget.Points;
+            string path = FileManager.GetFilePath(fileName);
+            if (!MyDailyActivitiesList.Any())
+            {
+                File.Delete(path);
+            }
         }
 
-        //TODO: Facade: Save daily event? 
         [RelayCommand]
         public async static void Save()
         {
-            //Försöker hämta sparade aktiviter och poäng från fil
             string fileName = "Activities.txt";
-            List<Budget> dailyActivities = null;
-            try
-            {
-                dailyActivities = await FileManager.GetObjectFromTxt<List<Budget>>(fileName);
-            }
-            //Om ingen fil finns sparad får man ett felmeddelande
-            catch (Exception)
-            {
-                await Application.Current.MainPage.DisplayAlert("Error", "Du har inte lagt till några aktiviteter", "OK");
-            }
-            bool answer = false;
-            //Kontrollerar om det finns något innehåll i filen (Om man lagt till en aktivitet och sen tagit bort den, så att listan blivit tom, men filen ändå skapats)
-            if (dailyActivities != null && dailyActivities.Any())
-            {
-                answer = await Application.Current.MainPage.DisplayAlert("Confirm", "Är du säker på att du vill spara alla dagens aktiviteter? Du kan inte spara något mer för denna dag.", "OK", "Avbryt");
-            }
-            else if(dailyActivities != null && !dailyActivities.Any())
-            {
-                await Application.Current.MainPage.DisplayAlert("Error", "Du har inte lagt till några aktiviteter", "OK");
-            }
+            List<Budget> dailyActivities = await FileManager.GetFoundExistingFile<List<Budget>>(fileName, "Du har inte lagt till några aktiviteter");
 
+            bool answer = await InputManager.ConfirmSave(dailyActivities);
+        
             if (answer == true)
             {
-                string fileName2 = "MyDailyBudget.txt";
-                DailyBudget dailyBudget = await FileManager.GetObjectFromTxt<DailyBudget>(fileName2);
-                int diff = await CountTodaysBudget();
-                int totalBudget = dailyBudget.TotalDailyBudget - diff;
-
-                //Skapar nytt daily event med datum, dagens totalbudget med ev avdrag, summa av poängen av dagens aktiviteter samt en lista med alla aktiviteterna(Med namn och poäng).
-                DailyEvent dailyEvent = new() { Date = DateTime.Now.AddDays(-1), DailyBudget = totalBudget, UsedBudgetPoints = dailyActivities.Sum(p => p.Points), MyActivities = dailyActivities };
-                var dateAndUsedPoints = new List<DailyEvent>()
-                {
-                    dailyEvent
-                };
-                //Skapar ny textfil att skriva datum och summa i
-                string fileName3 = "DatePointsAndActivity.txt";
-                string path = FileManager.GetFilePath(fileName3);
-                if (!File.Exists(path))
-                {
-                    FileManager.WriteObjectToFile(path, dateAndUsedPoints);
-                }
-                else
-                {
-                    List<DailyEvent> dailyEvents = await FileManager.GetObjectFromTxt<List<DailyEvent>>(path);
-                    dailyEvents.Add(dailyEvent);
-                    FileManager.WriteObjectToFile(path, dailyEvents);
-                }
-
-                //Tar bort filen med sparade aktiviteter när datum och summa är sparat  
-                string path2 = FileManager.GetFilePath(fileName);
-                File.Delete(path2);
-                await Application.Current.MainPage.DisplayAlert("Klart", "Dagens aktiviteter är sparade!", "OK");
-                await Application.Current.MainPage.Navigation.PushAsync(new MyDayStartPage());
+                FileManager.SaveDailyActivitiesToFile(dailyActivities);
+ 
+                FileManager.DeleteFileWhenSaved(fileName);
             }
             else
             {

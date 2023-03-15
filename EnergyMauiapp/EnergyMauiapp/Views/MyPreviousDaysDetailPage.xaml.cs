@@ -9,6 +9,6 @@ public partial class MyPreviousDaysDetailPage : ContentPage
 
     private async void OnBackClicked(object sender, EventArgs e)
     {
-        await Navigation.PopAsync();
+        await Navigation.PushAsync(new MyPreviousDaysPage());
     }
 }
