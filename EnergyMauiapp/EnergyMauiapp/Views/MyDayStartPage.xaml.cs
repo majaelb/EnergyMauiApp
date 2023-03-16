@@ -44,21 +44,21 @@ public partial class MyDayStartPage : ContentPage
         }
         //Om man redan har sparat dagens aktiviteter får man också ett felmeddelande och kommer inte in på sidan
         //TODO: Kommentera in detta när programmet körs på riktigt
-        //int dayOfYear = 0;
-        //try
-        //{
-        //    dayOfYear = await PreviousDayManager.GetYesterDaysDayOfYear();
-        //}
-        //catch
-        //{
+        int dayOfYear = 0;
+        try
+        {
+            dayOfYear = await PreviousDayManager.GetYesterDaysDayOfYear();
+        }
+        catch
+        {
 
-        //}
-        //if (dayOfYear == DateTime.Now.DayOfYear)
-        //{
-        //    await DisplayAlert("Error", "Du har redan sparat dagens aktiviteter!", "OK");
-        //}
+        }
+        if (dayOfYear == DateTime.Now.DayOfYear)
+        {
+            await DisplayAlert("Error", "Du har redan sparat dagens aktiviteter!", "OK");
+        }
         //Om det finns både dagsbudget och man inte redan sparat något för dagen så kommer man in på sidan och kan fylla i aktiviteter    
-        if (/*dayOfYear != DateTime.Now.DayOfYear &&*/ dailyBudget != null)
+        if (dayOfYear != DateTime.Now.DayOfYear && dailyBudget != null)
         {
             await Navigation.PushAsync(new MyDayPage());
         }
