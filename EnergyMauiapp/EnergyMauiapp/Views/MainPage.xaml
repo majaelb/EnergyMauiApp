@@ -18,8 +18,8 @@
         <Frame BorderColor="Gray"
                BackgroundColor="White"
                     Opacity="0.5"
-       CornerRadius="5"
-       Padding="8"
+                    CornerRadius="5"
+                    Padding="8"
                HorizontalOptions="CenterAndExpand"
                HeightRequest="100">
             <StackLayout>
@@ -36,44 +36,90 @@
                        TextColor="DimGray"/>
             </StackLayout>
         </Frame>
-        
-        <Button
-        x:Name="MyDayBtn"
-        Text="Min dag"
-            BackgroundColor="White"
+            <Frame
+                BorderColor="Gray"
+                BackgroundColor="White"
+                Opacity="0.5"
+                CornerRadius="5"
+                Padding="8"
+                HorizontalOptions="CenterAndExpand"
+                HeightRequest="350"
+                WidthRequest="500">
+                <StackLayout
+                    Spacing="20">
+            <Label 
+            Text="Välkommen till energiappen, ett hjälpmedel&#10; för dig som lider av hjärntrötthet!"
+            FontSize="20"
             TextColor="DimGray"
-                    Opacity="0.5"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+                <Label 
+            Text="Här hittar du verktyg som kan hjälpa dig i vardagen&#10;såsom ett skattningsformulär för hjärntrötthet,&#10;videomeditationer samt funktionen Min dag, där du får hjälp&#10;att synliggöra hur mycket energi du gör av med på en dag&#10;och hur det påverkar dig kommande dag.&#10;&#10;Se länkar för information om The Spoon Theory där du&#10;kan läsa mer om hur du använder din energi.&#10;&#10;Klicka på Dagsbudget nedan och skapa en ny för att&#10;komma igång med att kartlägga din energi!"
+            FontSize="16"
+            TextColor="DimGray"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+                </StackLayout>
+            </Frame>
+
+            <Grid
+                ColumnDefinitions=".50*, .50*"
+                RowDefinitions="Auto, Auto, *"
+                RowSpacing="20"
+                ColumnSpacing="20">
+            <Button
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                WidthRequest="150"
+                x:Name="MyDayBtn"
+                Text="Min dag"       
+                TextColor="DimGray"
+                    Opacity="0.7"
         HorizontalOptions="Center"
         Clicked="OnMyDayBtnClicked"/>
         <Button
-        x:Name="EstimationBtn"
-        Text="Självskattning"
+            Grid.Row="1"
+            Grid.Column="0"
+            WidthRequest="150"
+            x:Name="EstimationBtn"
+            Text="Självskattning"
             TextColor="DimGray"
-                    Opacity="0.7"
-        HorizontalOptions="Center"
-        Clicked="OnEstimationBtnClicked"/>
+            Opacity="0.7"
+            HorizontalOptions="End"
+            Clicked="OnEstimationBtnClicked"/>
         <Button
-        x:Name="BudgetBtn"
-        Text="Dagsbudget"
+            Grid.Row="1"
+            Grid.Column="1"
+            WidthRequest="150"
+            x:Name="BudgetBtn"
+            Text="Dagsbudget"
             TextColor="DimGray"
-                    Opacity="0.7"
-        HorizontalOptions="Center"
-        Clicked="OnBudgetBtnClicked"/>
+            Opacity="0.7"
+            HorizontalOptions="Start"
+            Clicked="OnBudgetBtnClicked"/>
         <Button
-        x:Name="YouTubeBtn"
-        Text="Meditationer"
+            Grid.Row="2"
+            Grid.Column="0"
+            WidthRequest="150"
+            x:Name="YouTubeBtn"
+            Text="Meditationer"
             TextColor="DimGray"
-                    Opacity="0.7"
-        HorizontalOptions="Center"
-        Clicked="OnYouTubeBtnClicked"/>
+            Opacity="0.7"
+            HorizontalOptions="End"
+            Clicked="OnYouTubeBtnClicked"/>
         <Button
-        x:Name="FactLinkBtn"
-        Text="Fakta och länkar"
+            Grid.Row="2"
+            Grid.Column="1"
+            WidthRequest="150"
+            x:Name="FactLinkBtn"
+            Text="Fakta och länkar"
             TextColor="DimGray"
-                    Opacity="0.7"
-        HorizontalOptions="Center"
-        Clicked="OnFactLinkBtnClicked"/>
-        
-    </VerticalStackLayout>
+            Opacity="0.7"
+            HorizontalOptions="Start"
+            Clicked="OnFactLinkBtnClicked"/>
+            </Grid>
+
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

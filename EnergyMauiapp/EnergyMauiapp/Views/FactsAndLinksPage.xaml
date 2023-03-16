@@ -120,8 +120,34 @@
             </Label.FormattedText>
         </Label>
 
+        <Label
+            HorizontalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer 
+                    
+              Command="{Binding OpenUrlCommand}"
+              CommandParameter="https://aspekt.nu/2016/09/01/the-spoon-theory/" 
+           />
+            </Label.GestureRecognizers>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span 
+                 Text="Här kan du läsa mer om "
+                        FontSize="18"
+                        TextColor="DimGray"/>
+                    <Span 
+                 Text="The Spoon Theory"
+                        FontSize="18"
+                 TextColor="DimGray"
+                 TextDecorations="Underline"
+                        >
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
 
 
+        
 
 
         <Button
