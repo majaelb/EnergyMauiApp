@@ -19,7 +19,8 @@
        CornerRadius="5"
        Padding="8"
                HorizontalOptions="CenterAndExpand"
-               HeightRequest="100">
+               HeightRequest="100"
+               WidthRequest="500">
             <StackLayout>
                 <Label Text="Tips och råd"
                            HorizontalOptions="Center"

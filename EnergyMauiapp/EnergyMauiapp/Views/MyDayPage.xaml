@@ -23,7 +23,8 @@
        CornerRadius="5"
        Padding="8"
                HorizontalOptions="CenterAndExpand"
-               HeightRequest="100">
+               HeightRequest="100"
+               WidthRequest="500">
             <StackLayout>
                 <Label Text="Tips och råd"
                            HorizontalOptions="Center"
@@ -41,7 +42,8 @@
 
             <Label 
             Text="Här går du in under dagen och lägger till de aktiviteter du gjort.&#10;Du kan gå in flera gånger under dagen och fylla på.&#10;&#10;Om du överskred din dagsbudget igår kommer detta att vara&#10;avdraget från dagens budget.&#10;&#10;Vid dagens slut trycker du på spara längst ner!"
-            FontSize="18"
+            FontSize="16"
+                WidthRequest="500"
             TextColor="DimGray"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
@@ -94,7 +96,9 @@
 
                                 <Button 
                                     Grid.Column="2"
+                                    Grid.ColumnSpan="2"
                                     Text="Lägg till"
+                                   
                                     TextColor="DimGray"
                                     Opacity="0.7"
                                     HorizontalOptions="Center"

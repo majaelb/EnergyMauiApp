@@ -19,7 +19,8 @@
        CornerRadius="5"
        Padding="8"
                HorizontalOptions="CenterAndExpand"
-               HeightRequest="100">
+               HeightRequest="100"
+               WidthRequest="500">
             <StackLayout>
                 <Label Text="Tips och råd"
                            HorizontalOptions="Center"
@@ -38,6 +39,7 @@
         <Label 
             Text="Välj om du vill fylla i dina dagliga aktiviteter&#10;eller se aktiviteter för dina tidigare dagar"
             FontSize="20"
+            
             TextColor="DimGray"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
