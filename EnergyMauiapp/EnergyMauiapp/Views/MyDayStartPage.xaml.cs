@@ -14,11 +14,18 @@ public partial class MyDayStartPage : ContentPage
         BindingContext = vm;
     }
 
-
-
     private async void OnPrevDaysBtnClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new MyPreviousDaysPage());
+        string fileName = "DatePointsAndActivity.txt";
+        bool existingFile = FileManager.FindExistingFile(fileName);
+        if (existingFile)
+        {
+            await Navigation.PushAsync(new MyPreviousDaysPage());
+        }
+        else
+        {
+            await DisplayAlert("Error", "Det finns inga dagar att visa", "OK");
+        }
     }
 
 
@@ -37,13 +44,21 @@ public partial class MyDayStartPage : ContentPage
         }
         //Om man redan har sparat dagens aktiviteter får man också ett felmeddelande och kommer inte in på sidan
         //TODO: Kommentera in detta när programmet körs på riktigt
-        //int dayOfYear = PreviousDayManager.GetYesterDaysDayOfYear();
+        //int dayOfYear = 0;
+        //try
+        //{
+        //    dayOfYear = await PreviousDayManager.GetYesterDaysDayOfYear();
+        //}
+        //catch
+        //{
+
+        //}
         //if (dayOfYear == DateTime.Now.DayOfYear)
         //{
         //    await DisplayAlert("Error", "Du har redan sparat dagens aktiviteter!", "OK");
         //}
-        //Om det finns både dagsbudget och man inte redan sparat något för dagen så kommer man in på sidan och kan fylla i aktiviteter
-        /*else*/ if(/*dayOfYear != DateTime.Now.DayOfYear &&*/ dailyBudget != null) 
+        //Om det finns både dagsbudget och man inte redan sparat något för dagen så kommer man in på sidan och kan fylla i aktiviteter    
+        if (/*dayOfYear != DateTime.Now.DayOfYear &&*/ dailyBudget != null)
         {
             await Navigation.PushAsync(new MyDayPage());
         }

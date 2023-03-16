@@ -38,23 +38,6 @@ namespace EnergyMauiapp.Helpers
             return text;
         }
 
-        public static Color GetColor(double result)
-        {
-            Color color = Color.FromArgb("#DDA0DD");
-
-            if (result <= 10)
-                color = Color.FromArgb("#DDA0DD");
-            else if (result > 10 && result <= 14.5)
-                color = Color.FromArgb("#DDA0DD");
-            else if (result > 14.5 && result <= 20)
-                color = Color.FromArgb("#DDA0DD");
-            else if (result > 20)
-                color = Color.FromArgb("#DDA0DD");
-
-            return color;
-        }
-
-
         public static async Task<bool> ConfirmSave(List<Budget> dailyActivities)
         {
             bool answer = false;

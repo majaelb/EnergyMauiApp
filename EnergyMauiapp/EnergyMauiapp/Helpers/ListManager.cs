@@ -10,6 +10,26 @@ namespace EnergyMauiapp.Helpers
 {
     internal class ListManager
     {
+        public static async Task<List<SelfEstimation>> GetOrderedAndColoredList()
+        {
+            string fileName = "minaSkattningsResultat.txt";
+            var selfEstResults = await FileManager.GetObjectFromTxt<List<SelfEstimation>>(fileName);
+            var selfEstResultsOrdered = selfEstResults.AsEnumerable().OrderByDescending(x => x.Date);
+            var selfEstResultsColored = new List<SelfEstimation>();
+            foreach (var item in selfEstResultsOrdered)
+            {
+                if (item.Result <= 10)
+                    item.Color = Color.FromArgb("#3CB371");
+                else if (item.Result > 10 && item.Result <= 14.5)
+                    item.Color = Color.FromArgb("#6495ED");
+                else if (item.Result > 14.5 && item.Result <= 20)
+                    item.Color = Color.FromArgb("#FFFF00");
+                else if (item.Result > 20)
+                    item.Color = Color.FromArgb("#DB7093");
+                selfEstResultsColored.Add(item);
+            }
+            return selfEstResultsColored;
+        }
 
         public static string AddOneRandomTips()
         {
@@ -139,18 +159,6 @@ namespace EnergyMauiapp.Helpers
 
             };
             return questionsAndOptions;
-        }
-
-
-
-        public static List<string> MakeLinkList()
-        {
-            List<string> links = new()
-            {
-            "https://brainfatigue.se/behandling-mindfulness/",
-            "https://www.gu.se/forskning/mental-trotthet-hjarntrotthet"
-            };
-            return links;
-        }
+        }  
     }
 }

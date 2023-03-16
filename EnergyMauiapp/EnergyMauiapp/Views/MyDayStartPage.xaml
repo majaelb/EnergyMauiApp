@@ -36,7 +36,7 @@
         </Frame>
 
         <Label 
-            Text="Välj om du vill fylla i dina dagliga aktiviteter eller se dina tidigare dagar"
+            Text="Välj om du vill fylla i dina dagliga aktiviteter&#10;eller se aktiviteter för dina tidigare dagar"
             FontSize="20"
             TextColor="DimGray"
             VerticalOptions="Center" 
@@ -55,7 +55,7 @@
                 Clicked="OnMyDayBtnClicked"/>
             <Button 
                     x:Name="PrevDaysBtn"
-                    Text="Tidigare aktiviteter"
+                    Text="Tidigare"
                     TextColor="DimGray"
                     Opacity="0.7"
                 Grid.Column="2"

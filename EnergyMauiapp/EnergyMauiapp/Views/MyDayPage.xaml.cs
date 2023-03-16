@@ -19,13 +19,10 @@ public partial class MyDayPage : ContentPage
     //        base.OnAppearing();
     //    try
     //    {
-    //        //Task t = (BindingContext as MyDayPageViewModel).GetSavedActivities();
     //        await (BindingContext as MyDayPageViewModel).GetSavedActivities();
-
     //    }
     //    catch (Exception)
     //    {
-
     //    }
     //}
 
@@ -36,7 +33,6 @@ public partial class MyDayPage : ContentPage
         base.OnAppearing();
         try
         {
-            //Task t = (BindingContext as MyDayPageViewModel).GetSavedActivities();
             (BindingContext as MyDayPageViewModel).GetSavedActivitiesNotAsync();
 
         }

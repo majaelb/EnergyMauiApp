@@ -70,33 +70,6 @@
             VerticalOptions="Center"
             />
 
-        <!--<ListView
-            ItemsSource="{Binding SelfEstimationResults}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid 
-                            Padding="10"
-                            RowDefinitions="Auto, *"
-                            RowSpacing="10"
-                            ColumnSpacing="20">
-                            <Label 
-                                Text="{Binding Key}"
-                                TextColor="DimGray"
-                                HorizontalOptions="Center"
-                                VerticalOptions="Center"/>
-                            <Label 
-                                Grid.Row="1"                            
-                                Text="{Binding Value}"
-                                TextColor="Black"
-                                HorizontalOptions="Center"
-                                VerticalOptions="Center"/>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
-
             <ListView
             ItemsSource="{Binding SelfEstimations}">
                 <ListView.ItemTemplate>
@@ -106,7 +79,7 @@
                             Padding="10"
                             RowDefinitions="Auto, *, *"
                             ColumnDefinitions="*, Auto, *"
-                            RowSpacing="10"
+                            RowSpacing="5"
                             ColumnSpacing="20">
                                 <Label 
                                     Grid.Row="0"
@@ -119,7 +92,6 @@
                                 <Label 
                                 Grid.Row="1" 
                                     Grid.Column="1"
-
                                 Text="{Binding Result}"
                                 TextColor="{Binding Color}"
                                 HorizontalOptions="Center"
@@ -147,8 +119,6 @@
                 </ListView.ItemTemplate>
             </ListView>
             
-            <!--TextColor="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:PreviousSelfEstimationPageViewModel}},Path=Col}"-->
-
             <Button
             Text="Tillbaka"
                 TextColor="DimGray"

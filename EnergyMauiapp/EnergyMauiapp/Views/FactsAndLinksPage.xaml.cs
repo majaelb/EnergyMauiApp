@@ -10,7 +10,6 @@ public partial class FactsAndLinksPage : ContentPage
     {
         InitializeComponent();
         BindingContext = vm;
-        //LinkName.CommandParameter = "https://brainfatigue.se/behandling-mindfulness/";
     }
 
 

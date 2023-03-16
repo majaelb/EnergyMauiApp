@@ -11,6 +11,4 @@ namespace EnergyMauiapp.Models
         public  string Question { get; set; }
         public  string AnswerOptions { get; set; }       
     }
-
-
 }

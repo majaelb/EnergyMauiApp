@@ -28,6 +28,5 @@ namespace EnergyMauiapp.ViewModels
             };
         }
 
-       
     }
 }

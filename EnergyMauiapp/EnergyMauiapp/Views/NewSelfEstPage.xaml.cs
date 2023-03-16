@@ -52,7 +52,7 @@ public partial class NewSelfEstPage : ContentPage
             AnswerOptions.Text = SelfEstTest[questionCount].AnswerOptions;
         }
         Answer.Text = string.Empty; //Nollställer textrutan mellan varje inmatning
-        Result.Text = "Ditt resultat: " + user.EstResult.ToString();
+        //Result.Text = "Ditt resultat: " + user.EstResult.ToString();
     }
 
     private async void OnResultBtnClicked(object sender, EventArgs e)
@@ -64,59 +64,19 @@ public partial class NewSelfEstPage : ContentPage
             user.EstResult += Convert.ToDouble(Answer.Text);
 
             string text = InputManager.GetTextResult(user.EstResult);
-            Color color = InputManager.GetColor(user.EstResult);
-            //uint hexcolor = color.ToUint();
-            SelfEstimation selfEst = new() { Date = DateTime.Now, Result = user.EstResult, Text = text, Color = color };
-            var selfEstimations = new List<SelfEstimation>
-            {
-                selfEst
-            };
-            string fileName = "testmedsystem.txt";
+        
+            SelfEstimation selfEst = new() { Date = DateTime.Now, Result = user.EstResult, Text = text };
 
-            //string fileName = "SkattningsresultatMedFarg.txt";
-            string path = FileManager.GetFilePath(fileName);
-            if (!File.Exists(path))
-            {
-                FileManager.WriteObjectToFile(path, selfEstimations);
-            }
-            else
-            {
-                List<SelfEstimation> selfEstResults = await FileManager.GetObjectFromTxt<List<SelfEstimation>>(path);
-                selfEstResults.Add(selfEst);
-                FileManager.WriteObjectToFile(path, selfEstResults);
-            }
+            FileManager.SaveSelfEstimationResult(selfEst);
+ 
             user.EstResult = 0;
             await DisplayAlert("Klart", "Resultatet är sparat", "OK");
             await Navigation.PushAsync(new PreviousSelfEstimationsPage());
-
-
-
-
-            //Dictionary<DateTime, double> result = new()
-            //{
-            //    { DateTime.Now, user.EstResult }
-            //};
-            //string fileName = "Skattningsresultaten.txt";
-            //string path = FileManager.GetFilePath(fileName);
-            //if (!File.Exists(path))
-            //{
-            //    FileManager.WriteObjectToFile(path, result);
-            //}
-            //else
-            //{
-            //    var dictionary = await FileManager.GetObjectFromTxt<Dictionary<DateTime, double>>(fileName);
-            //    dictionary.Add(DateTime.Now, user.EstResult);
-            //    FileManager.WriteObjectToFile(fileName, dictionary);
-            //}
-            //user.EstResult = 0;
-            //await DisplayAlert("Klart", "Resultatet är sparat", "OK");
-            //await Navigation.PushAsync(new PreviousSelfEstimationsPage());
         }
         else
         {
             await DisplayAlert("Error", "Felaktig inmatning", "OK");
         }
-
     }
     private async void OnBackClicked(object sender, EventArgs e)
     {

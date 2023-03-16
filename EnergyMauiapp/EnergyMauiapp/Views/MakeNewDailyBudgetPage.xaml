@@ -34,11 +34,17 @@
              HeightRequest="2"
              HorizontalOptions="Fill" />
                 <Label Text="{Binding Tips}"
-                           HorizontalOptions="Center"
+                       HorizontalOptions="Center"
                        TextColor="DimGray"/>
             </StackLayout>
         </Frame>
 
+            <Label 
+            Text="Här gör du en ny dagsbudget.&#10;Lägg till de aktiviteter som du vanligtvis orkar&#10;göra på en dag utan att vara helt slut på kvällen"
+            FontSize="20"
+            TextColor="DimGray"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
             <Grid
                 Padding="10"
                 RowDefinitions="Auto, Auto, *"
@@ -48,11 +54,11 @@
                 <Label 
                 Grid.Column="0"
                 Grid.Row="0"
-            Text="Här gör du en ny dagsbudget,&#10;lägg till de saker som du orkar göra på en dag&#10;utan att vara helt slut på kvällen"
-            FontSize="16"
-            TextColor="DimGray"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+                Text="Lägg till aktivitet här"
+                FontSize="16"
+                TextColor="DimGray"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" />
 
 
                 <ListView
@@ -69,7 +75,7 @@
                             ColumnSpacing="20">
                                     <Label Grid.Column="0"
                                    Text="{Binding Name}"
-                                   HorizontalOptions="Center"
+                                   HorizontalOptions="Start"
                                            TextColor="DimGray"
                                    FontSize="14"/>
 
@@ -90,11 +96,11 @@
                 <Label 
             Grid.Column="1"
             Grid.Row="0"
-            Text="Här är de aktiviteter du lagt till&#10;Tryck på ta bort om du ångrar något val"
+            Text="Här är de aktiviteter du lagt till"
             FontSize="16"
             TextColor="DimGray"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Start" />
 
                 <ListView
             Grid.Column="1"
@@ -110,7 +116,7 @@
                             ColumnSpacing="20">
                                     <Label Grid.Column="0"
                                    Text="{Binding Name}"
-                                   HorizontalOptions="Center"
+                                   HorizontalOptions="Start"
                                            TextColor="DimGray"
                                    FontSize="14"/>
                                     <Button 

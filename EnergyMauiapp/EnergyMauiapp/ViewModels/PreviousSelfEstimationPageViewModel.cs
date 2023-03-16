@@ -41,26 +41,10 @@ namespace EnergyMauiapp.ViewModels
         {
             SelfEstimations = new ObservableCollection<SelfEstimation>();
 
-            string fileName = "testmedsystem.txt";
-            var selfEstResults = Task.Run(() => FileManager.GetObjectFromTxt<List<SelfEstimation>>(fileName));
-            selfEstResults.Wait();
-            foreach (var activity in selfEstResults.Result.AsEnumerable().OrderByDescending(x => x.Date))
-            {
-                SelfEstimations.Add(activity);
-            }
-            //Fullösning för att sätta rätt färg på resultaten
-            foreach (var item in SelfEstimations)
-            {
-                if (item.Result <= 10)
-                    item.Color = Color.FromArgb("#3CB371");
-                else if (item.Result > 10 && item.Result <= 14.5)
-                    item.Color = Color.FromArgb("#6495ED");
-                else if (item.Result > 14.5 && item.Result <= 20)
-                    item.Color = Color.FromArgb("#FFFF00");
-                else if (item.Result > 20)
-                    item.Color = Color.FromArgb("#DB7093");
-            }
-
+            var task = Task.Run(() => ListManager.GetOrderedAndColoredList());
+            task.Wait();
+            task.Result.ForEach(SelfEstimations.Add);
+     
             Tips = ListManager.AddOneRandomTips();
 
             Header = new Header()
@@ -70,20 +54,19 @@ namespace EnergyMauiapp.ViewModels
             };
         }
 
-        
 
         [RelayCommand]
         public async void Delete(object b)
         {
             var selfEst = (SelfEstimation)b;
 
-            string fileName = "testmedsystem.txt";
+            string fileName = "minaSkattningsResultat.txt";
             List<SelfEstimation> selfEstimations = await FileManager.GetObjectFromTxt<List<SelfEstimation>>(fileName);
             int removeIndex = selfEstimations.FindIndex(b => b.Date == selfEst.Date);
             selfEstimations.RemoveAt(removeIndex);
             FileManager.WriteObjectToFile(fileName, selfEstimations);
             SelfEstimations.Remove(selfEst);
-            
+
         }
     }
 }

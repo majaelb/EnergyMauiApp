@@ -16,7 +16,6 @@ public partial class MyPreviousDaysPage : ContentPage
 
     private async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
-        //TODO: Kunna klicka på resultatet flera gånger i rad
         //Om vi klickat på en av dagarna händer detta
         DailyEvent dailyEvent = ((ListView)sender).SelectedItem as DailyEvent;
 

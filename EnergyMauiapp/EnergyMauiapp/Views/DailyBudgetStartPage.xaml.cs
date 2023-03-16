@@ -17,7 +17,6 @@ public partial class DailyBudgetPage : ContentPage
     }
 
 
-
     private async void OnNewBudgetBtnClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new MakeNewDailyBudgetPage());

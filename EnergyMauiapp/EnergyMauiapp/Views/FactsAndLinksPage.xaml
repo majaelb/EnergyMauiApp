@@ -5,8 +5,9 @@
              Title="Fakta och länkar"
              BackgroundColor="LightGray">
     <VerticalStackLayout
-        Spacing="20"
-        >
+        Spacing="25"
+            Padding="30,0"
+            HorizontalOptions="Center">
 
         <Image
                 Source="{Binding Header.HeaderImageSource}"
@@ -36,7 +37,7 @@
         </Frame>
 
         <Label 
-            Text="Här hittar du nyttiga fakta och länkar om hjärntrötthet!"
+            Text="Här hittar du länkar med nyttiga fakta om hjärntrötthet!"
             FontSize="20"
             TextColor="DimGray"
             VerticalOptions="Center" 
@@ -54,12 +55,12 @@
                 <FormattedString>
                     <Span 
                  Text="Här kan du läsa om "
-                        FontSize="Subtitle"
+                        FontSize="18"
                         TextColor="DimGray"
                         />
                     <Span 
                  Text="behandling av hjärntrötthet"
-                        FontSize="Subtitle"
+                        FontSize="18"
                  TextColor="DimGray"
                  TextDecorations="Underline"
                         >
@@ -81,11 +82,11 @@
                 <FormattedString>
                     <Span 
                  Text="Här hittar du "
-                        FontSize="Subtitle"
+                        FontSize="18"
                         TextColor="DimGray"/>
                     <Span 
                  Text="forskning om hjärntrötthet"
-                        FontSize="Subtitle"
+                        FontSize="18"
                  TextColor="DimGray"
                  TextDecorations="Underline">
                     </Span>
@@ -93,24 +94,33 @@
             </Label.FormattedText>
         </Label>
 
+        <Label
+            HorizontalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer 
+                    
+              Command="{Binding OpenUrlCommand}"
+              CommandParameter="https://www.sahlgrenska.se/omraden/omrade-3/arbetsterapi-och-fysioterapi/informationsbroschyr/mental-trotthet/" 
+           />
+            </Label.GestureRecognizers>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span 
+                 Text="Här hittar du tips på "
+                        FontSize="18"
+                        TextColor="DimGray"/>
+                    <Span 
+                 Text="strategier vid hjärntrötthet"
+                        FontSize="18"
+                 TextColor="DimGray"
+                 TextDecorations="Underline"
+                        >
+                    </Span>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
 
-        <!--<CollectionView
-                ItemsSource="{Binding Links}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="{x:Type x:String}">
-                    <Grid
-                            RowDefinitions="*"
-                            ColumnDefinitions="600, 100">
-                        <Frame Grid.Column="0">
-                            <Label
-                                    Text="{Binding .}"
-                                    FontSize="32">
-                            </Label>
-                        </Frame>
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>-->
+
 
 
 

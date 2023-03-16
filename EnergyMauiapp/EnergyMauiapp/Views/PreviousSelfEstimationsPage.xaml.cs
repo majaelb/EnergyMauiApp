@@ -16,11 +16,10 @@ public partial class PreviousSelfEstimationsPage : ContentPage
         Low.Text = "Mild mental trötthet (10,5-14,5)";
         Middle.Text = "Måttlig mental trötthet (15-20)";
         High.Text = "Svår mental trötthet (20,5 & högre)";
-        //TODO: Koppla resultatens färg till resultat?
     }
 
     private async void OnBackClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new MainPage());
+        await Navigation.PushAsync(new SelfEstimationPage());
     }
 }

@@ -59,10 +59,10 @@ namespace EnergyMauiapp.ViewModels
             };
         }
 
-        public static async Task<ObservableCollection<DailyEvent>> GetSavedActivities()
+        public static async Task<List<DailyEvent>> GetSavedActivities()
         {
             string fileName = "DatePointsAndActivity.txt";
-            ObservableCollection<DailyEvent> activitiesFromTxt = await FileManager.GetObjectFromTxt<ObservableCollection<DailyEvent>>(fileName);
+            List<DailyEvent> activitiesFromTxt = await FileManager.GetObjectFromTxt<List<DailyEvent>>(fileName);
             return activitiesFromTxt;
         }  
     }

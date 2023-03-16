@@ -12,8 +12,6 @@ public partial class MainPage : ContentPage
         InitializeComponent();
         BindingContext = vm;
     }
-
-    //TODO: kolla felhantering överallt! Kan man väva in felhantering av att läsa/skriva till fil i Facade?
     private async void OnMyDayBtnClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new Views.MyDayStartPage());

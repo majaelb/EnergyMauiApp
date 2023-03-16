@@ -76,9 +76,9 @@
                 HorizontalOptions="Center"
                 IsVisible="False"
                 Clicked="OnResultBtnClicked"/>
-            <Label
+            <!--<Label
                 x:Name="Result"
-                HorizontalOptions="Center"/>
+                HorizontalOptions="Center"/>-->
             <Button
                 Text="Tillbaka"
                 TextColor="DimGray"

@@ -39,6 +39,13 @@
             </StackLayout>
         </Frame>
 
+            <Label 
+            Text="Här går du in under dagen och lägger till de aktiviteter du gjort.&#10;Du kan gå in flera gånger under dagen och fylla på.&#10;&#10;Om du överskred din dagsbudget igår kommer detta att vara&#10;avdraget från dagens budget.&#10;&#10;Vid dagens slut trycker du på spara längst ner!"
+            FontSize="18"
+            TextColor="DimGray"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
             <Grid
                 Padding="10"
                 RowDefinitions="Auto, Auto, *"
@@ -48,7 +55,7 @@
             <Label 
                 Grid.Column="0"
                 Grid.Row="0"
-            Text="Här lägger du till vad du gjort under dagen"
+            Text="Lägg till aktiviteter här"
             FontSize="16"
             TextColor="DimGray"
             VerticalOptions="Center" 
@@ -103,7 +110,7 @@
         <Label 
             Grid.Column="1"
             Grid.Row="0"
-            Text="Här är de aktiviteter du lagt till&#10;Tryck på ta bort om du ångrar något val"
+            Text="Här är de aktiviteter du lagt till"
             FontSize="16"
             TextColor="DimGray"
             VerticalOptions="Center" 

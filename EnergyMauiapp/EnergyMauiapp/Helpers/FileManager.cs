@@ -81,7 +81,7 @@ namespace EnergyMauiapp.Helpers
             int totalBudget = dailyBudget.TotalDailyBudget - diff;
 
             //Skapar nytt daily event med datum, dagens totalbudget med ev avdrag, summa av poängen av dagens aktiviteter samt en lista med alla aktiviteterna(Med namn och poäng).
-            DailyEvent dailyEvent = new() { Date = DateTime.Now.AddDays(-1), DailyBudget = totalBudget, UsedBudgetPoints = dailyActivities.Sum(p => p.Points), MyActivities = dailyActivities };
+            DailyEvent dailyEvent = new() { Date = DateTime.Now/*.AddDays(-1)*/, DailyBudget = totalBudget, UsedBudgetPoints = dailyActivities.Sum(p => p.Points), MyActivities = dailyActivities };
             var dateAndUsedPoints = new List<DailyEvent>()
                 {
                     dailyEvent
@@ -107,6 +107,27 @@ namespace EnergyMauiapp.Helpers
             File.Delete(path2);
             await Application.Current.MainPage.DisplayAlert("Klart", "Dagens aktiviteter är sparade!", "OK");
             await Application.Current.MainPage.Navigation.PushAsync(new Views.MyDayStartPage());
+        }
+
+        public static async void SaveSelfEstimationResult(SelfEstimation selfEst)
+        {         
+            var selfEstimations = new List<SelfEstimation>
+            {
+                selfEst
+            };
+            string fileName = "minaSkattningsResultat.txt";
+
+            string path = FileManager.GetFilePath(fileName);
+            if (!File.Exists(path))
+            {
+                FileManager.WriteObjectToFile(path, selfEstimations);
+            }
+            else
+            {
+                List<SelfEstimation> selfEstResults = await FileManager.GetObjectFromTxt<List<SelfEstimation>>(path);
+                selfEstResults.Add(selfEst);
+                FileManager.WriteObjectToFile(path, selfEstResults);
+            }
         }
 
     }

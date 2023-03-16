@@ -21,6 +21,9 @@ namespace EnergyMauiapp.ViewModels
         string name;
 
         [ObservableProperty]
+        int points;
+
+        [ObservableProperty]
         int totalBudget;
 
         [ObservableProperty]
