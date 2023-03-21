@@ -73,8 +73,8 @@
                             <ViewCell>
                                 <Grid 
                             Padding="10"
-                            ColumnDefinitions=".50*, .50*"
-                            ColumnSpacing="20">
+                            ColumnDefinitions="100, 50, 100"
+                            ColumnSpacing="10">
                                     <Label Grid.Column="0"
                                    Text="{Binding Name}"
                                    HorizontalOptions="Start"
@@ -82,11 +82,11 @@
                                    FontSize="14"/>
 
                                     <Button 
-                                    Grid.Column="1"
+                                    Grid.Column="2"
                                     Text="Lägg till"
                                     TextColor="DimGray"
                                     Opacity="0.7"
-                                    HorizontalOptions="Center"
+                                    HorizontalOptions="Start"
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MakeNewDailyBudgetPageViewModel}}, Path=AddCommand}"
                                      CommandParameter="{Binding .}"/>
                                 </Grid>
@@ -114,19 +114,19 @@
                             <ViewCell>
                                 <Grid 
                             Padding="10"
-                            ColumnDefinitions=".50*, .50*"
-                            ColumnSpacing="20">
+                            ColumnDefinitions="100, 50, 100"
+                            ColumnSpacing="10">
                                     <Label Grid.Column="0"
                                    Text="{Binding Name}"
                                    HorizontalOptions="Start"
                                            TextColor="DimGray"
                                    FontSize="14"/>
                                     <Button 
-                                    Grid.Column="1"
+                                    Grid.Column="2"
                                     Text="Ta bort"
                                     TextColor="DimGray"
                                     Opacity="0.7"
-                                    HorizontalOptions="Center"
+                                    HorizontalOptions="Start"
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MakeNewDailyBudgetPageViewModel}}, Path=DeleteCommand}"
                                      CommandParameter="{Binding .}"/>
                                 </Grid>
